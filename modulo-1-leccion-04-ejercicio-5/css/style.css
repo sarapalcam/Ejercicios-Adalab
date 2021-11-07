@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  background-color: lightsalmon;
+
+  flex-basis: 10vh;
+}
+main {
+  background-color: lightskyblue;
+  font-size: 60px;
+  flex-basis: 80vh;
+}
+
+footer {
+  background-color: salmon;
+
+  flex-basis: 10vh;
+}

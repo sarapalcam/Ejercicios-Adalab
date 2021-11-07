@@ -1,0 +1,36 @@
+* {
+  font-family: "Roboto", sans-serif;
+  color: palevioletred;
+}
+
+.page {
+  margin: 20px;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.item {
+  background: white;
+  text-align: center;
+  font-size: 36px;
+}
+
+.container {
+  width: 1000px;
+  height: 300px;
+  background-color: lightpink;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.item {
+  border: 2px solid palevioletred;
+  box-sizing: border-box;
+  height: 100px;
+  width: 200px;
+}

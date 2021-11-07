@@ -1,0 +1,77 @@
+* {
+  margin: 0px;
+}
+
+p {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 18px;
+}
+
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 28px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.container {
+  background-color: lightgray;
+  width: 900px;
+  height: 1200px;
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.news {
+  box-sizing: border-box;
+  padding: 15px;
+  width: 50%;
+}
+.imagen-1 {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80");
+  background-position: center;
+}
+.imagen-2 {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1472&q=80");
+  background-position: center;
+}
+
+.imagen-3 {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1444464666168-49d633b86797?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1469&q=80");
+  background-position: center;
+}
+
+.imagen-4 {
+  width: 100%;
+  height: 50%;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1456926631375-92c8ce872def?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  background-position: center;
+}
+
+.imagen-5 {
+  width: 100%;
+  height: 70%; /* He hecho "trampa" aquí para que se vea mejor el diseño, ¿esto se puede hacer o hay otras formas de que todo el artículo se redimensione correctamente según su contenedor? */
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80");
+  background-position: center;
+}
+
+.news-5 {
+  order: -1;
+  flex-grow: 2;
+  width: 100%; /* He tenido que añadir el ancho de este artículo porque al añadir el orden esta noticia no ocupaba todo el ancho del container, ¿por qué flex-grow sí me funcionaba cuando la noticia se encontraba en último lugar? */
+}
+
+/* Para poder poner las imágenes con el tamaño que quería he tenido que hacerlo en CSS */
