@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  font-size: unset;
+  font-weight: unset;
+}
+
+.container {
+  margin: 0 20px;
+  background-color: beige;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+}
