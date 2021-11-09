@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  font-size: 32px;
+}
+
+.cookies {
+  height: 100px;
+  width: 100%;
+  background-color: yellow;
+  position: fixed;
+  bottom: 0;
+}

@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+}
+
+header {
+  height: 300px;
+  width: 100%;
+  background-color: purple;
+  position: fixed;
+  z-index: 999;
+}
+
+main {
+  position: relative;
+  top: 300px;
+}
+
+p {
+  font-size: 32px;
+}
