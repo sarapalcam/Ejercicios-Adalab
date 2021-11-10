@@ -4,6 +4,8 @@
   margin: 0;
 }
 
+/*La imagen si la pongo desde html tengo que darle tamaño (el tamaño es mejor darlo en css) (si ponemos 100%x100% tomará todo el ancho y el largo de su madre, pero es buena práctica especificar los píxeles para las imágenes) y cluego hacer object-fit:cover en css para que se escale de forma proporcional. De todas formas, lo correcto es tener imágenes con las dimensiones adecuadas*/
+
 body {
   display: flex;
   margin: 20px;
