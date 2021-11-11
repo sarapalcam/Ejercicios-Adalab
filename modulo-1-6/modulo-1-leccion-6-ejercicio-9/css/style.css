@@ -1,0 +1,212 @@
+body{
+    background-color: rgb(167, 167, 167);
+    width: 100%;
+    height: 100vh;
+}
+
+.site-name{
+    font-size: 52px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+.menu{
+    background-color: greenyellow;
+}
+
+.menu-item{
+    color: blue;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.main-info{
+    background-color: yellow;
+}
+
+.main-title{
+    font-size:36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.main-text{
+    font-size: 18px;
+    line-height: 16pt;
+}
+
+.main-image{
+    visibility: hidden;
+}
+
+.related-info{
+    background-color: grey;
+    margin-top: 30px;
+}
+
+.related-tile{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.related-text{
+    font-size: 18px;
+    line-height: 16pt;
+}
+
+@media all and (min-width:480px){
+
+    .site-name{
+        font-size: 46px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+   .main{
+       display: flex;
+       
+   }
+    
+    .menu{
+        background-color: greenyellow;
+        min-width: 200px;
+        margin-right: 20px;
+    }
+    
+    .menu-item{
+        color: blue;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+    
+    .info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-info{
+        background-color: yellow;
+        margin-right: 20px;
+    }
+
+       
+    .main-title{
+        font-size:36px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .main-body{
+        display: flex;
+    }
+    
+    .main-text{
+        font-size: 18px;
+        line-height: 16pt;
+    }
+
+    .main-image{
+        visibility: visible;
+        background-color: orange;
+        min-width: 200px;
+        min-height: 200px;
+        margin: 20px 0 30px 20px;
+    }
+    
+    .related-info{
+        background-color: grey;
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+    
+    .related-tile{
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .related-text{
+        font-size: 18px;
+        line-height: 16pt;
+    }
+
+}
+
+@media all and (min-width:1000px){
+    
+    .site-name{
+        font-size: 46px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+   .main{
+       display: flex;
+       
+   }
+    
+    .menu{
+        background-color: greenyellow;
+        min-width: 200px;
+        margin-right: 20px;
+    }
+    
+    .menu-item{
+        color: blue;
+        text-decoration: underline;
+        font-size: 20px;
+    }
+    
+    .info{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-info{
+        background-color: yellow;
+        margin-right: 20px;
+    }
+
+       
+    .main-title{
+        font-size:36px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .main-body{
+        display: flex;
+    }
+    
+    .main-text{
+        font-size: 18px;
+        line-height: 16pt;
+    }
+
+    .main-image{
+        visibility: visible;
+        background-color: orange;
+        min-width: 200px;
+        min-height: 200px;
+        margin: 20px 0 30px 20px;
+    }
+    
+    .related-info{
+        background-color: grey;
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+    
+    .related-tile{
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .related-text{
+        font-size: 18px;
+        line-height: 16pt;
+    }
+
+}
