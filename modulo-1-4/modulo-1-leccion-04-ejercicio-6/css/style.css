@@ -1,52 +1,47 @@
-/*Las medidas tienen que ser relativas, es decir, los elementos de la página deben adaptarse al ancho de la ventana del navegador web. Si el tamaño de la ventana aumenta, el tamaño de los elementos debe aumentar.
-
-El ancho del conjunto entero debe ser del 100% con un ancho máximo de 960px
-
-Cada bloque debe de crearse con una etiqueta HTML5 (header, footer, aside...) y debe tener un título que esté centrado (como aparece en la imágen). El bloque central (que sería un article), en vez de tener un título, tendrá un párrafo con un texto aleatorio, podéis escribir dentro de él lo que queráis.*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin-right: 20px;
+  width: 100%;
 }
 
-main {
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  max-width: 960px;
-}
-
-header {
+.header {
   background-color: orangered;
-  text-align: center;
-  width: 100vw;
-  max-width: 960px;
-}
-
-article {
-  background-color: turquoise;
-  flex-grow: 1;
-  box-sizing: border-box;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-aside {
-  flex-grow: 2;
-  min-width: 150px;
+  padding: 10px 0 10px 0;
   text-align: center;
 }
+
+.main {
+  display: flex;
+}
+
+.article {
+  background-color: rgb(39, 159, 228);
+  padding: 10px 5px;
+  flex-basis: 60%;
+}
+
+.aside {
+  text-align: center;
+  padding-top: 10px;
+  flex-basis: 20%;
+}
+
 .aside-1 {
-  background-color: orange;
+  background-color: yellow;
   order: -1;
 }
 
 .aside-2 {
-  background-color: magenta;
+  background-color: rgb(224, 94, 137);
 }
 
-footer {
+.footer {
   background-color: greenyellow;
+  width: 100%;
+  padding: 10px 0 10px 0;
   text-align: center;
-  width: 100vw;
-  max-width: 960px;
 }
