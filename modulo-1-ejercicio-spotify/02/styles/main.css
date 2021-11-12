@@ -38,7 +38,6 @@
 }
 
 .hero {
-  position: absolute;
   margin-top: 50px;
   background-color: rgb(73, 160, 231);
   padding: 80px 15px 25px 15px;
@@ -60,8 +59,10 @@
   text-align: center;
   background-color: rgb(94, 228, 94);
   padding-top: 10px;
-  padding-bottom: 8px; /*¿Cómo se centra un texto verticalmente*/
-  border-radius: 20%; /*¿Por qué no sale el borde radius?*/
+  padding-bottom: 8px;
+  border-radius: 20px;
+  width: 100%;
+  font-size: 14px;
 }
 
 .button {
@@ -71,16 +72,30 @@
   font-weight: bold;
 }
 
-@media all and (min-width: 768px) {
-  .hamb {
-    display: none;
-  }
+.small {
+  display: block;
+  margin-top: 20px;
+  font-size: 9px;
+  line-height: 1.5;
+}
 
-  .nav {
-    display: block;
-  }
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
-  .list {
-    display: flex;
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 40px;
+  background-color: blueviolet;
+}
+
+.title2 {
+  font-size: 18;
 }
