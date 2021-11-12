@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  font-size: unset;
+}
+
+:root {
+  font-size: 14px;
+}
+
+.container {
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hijo {
+  background-color: beige;
+  margin: 2px;
+  background-image: url("../images/Chicas.png");
+  background-size: contain;
+  background-position-y: center;
+}
+
+@media all and (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: blueviolet;
+  }
+
+  .hijo {
+    font-size: 2rem; /* em es lo mismo pero lo hace respecto a su padre, no respecto al root. Suele utilizarse para casos más específicos*/
+    width: 45%;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  .hijo {
+    background-image: url("../images/Portada_tesis2.png");
+    background-size: cover;
+    background-position-y: center;
+  }
+}

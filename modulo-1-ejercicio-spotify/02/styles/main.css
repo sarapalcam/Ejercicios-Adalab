@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: unset;
+}
+
+* {
+  font-family: sans-serif;
+}
+
+:root {
+  font-size: 16px;
+}
+
+.header {
+  position: fixed;
+  background-color: black;
+  top: 0;
+  left: 0;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 25px;
+}
+
+.hamb {
+  width: 20px;
+}
+
+.nav {
+  display: none;
+}
+
+.hero {
+  position: absolute;
+  margin-top: 50px;
+  background-color: rgb(73, 160, 231);
+  padding: 80px 15px 25px 15px;
+  color: white;
+}
+
+.title-hero {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.button-container {
+  display: block;
+  text-align: center;
+  background-color: rgb(94, 228, 94);
+  padding-top: 10px;
+  padding-bottom: 8px; /*¿Cómo se centra un texto verticalmente*/
+  border-radius: 20%; /*¿Por qué no sale el borde radius?*/
+}
+
+.button {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+}
+
+@media all and (min-width: 768px) {
+  .hamb {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .list {
+    display: flex;
+  }
+}
