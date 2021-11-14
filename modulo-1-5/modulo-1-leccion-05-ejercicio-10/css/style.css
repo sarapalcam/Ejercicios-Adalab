@@ -1,35 +1,51 @@
 * {
   font-family: "Lato", sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: lightgray;
+  background-color: lightskyblue;
+  margin: 30px 100px 30px 100px;
 }
 
-li.pointer {
+.item {
+  text-decoration: underline;
   cursor: help;
 }
 
 .tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px solid grey;
+  display: none;
 }
 
-.tooltip .tooltiptext {
-  visibility: hidden;
+.item-html:hover .tooltip-html {
+  display: inline-block;
   width: 400px;
   height: 200px;
+  padding: 40px 20px 10px 20px;
+  border-radius: 10px;
   background-color: white;
-  color: grey;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
   position: absolute;
-  z-index: 1;
+  transform: translate(3%, -10%);
 }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
+.item-css:hover .tooltip-css {
+  display: inline-block;
+  width: 400px;
+  height: 200px;
+  padding: 30px 20px 10px 20px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  transform: translate(2%, -7%);
+}
+
+.item-js:hover .tooltip-js {
+  display: inline-block;
+  width: 400px;
+  height: 200px;
+  padding: 40px 20px 10px 20px;
+  border-radius: 10px;
+  background-color: white;
+  position: absolute;
+  transform: translate(2%, -7%);
 }

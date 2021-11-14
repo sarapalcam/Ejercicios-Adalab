@@ -12,44 +12,46 @@
     <title>Con buenos modales</title>
   </head>
   <body>
-    <!--Inicio parte nueva del ejercicio. ¿Dónde debería ir una ventana de este tipo dentro del HTML?-->
+    <header class="header">
+      <div class="container-h">
+        <h1 class="name">Mi blog</h1>
 
-    <section class="hello-screen">
-      <div class="hello-window">
-        <h2 class="hello-title">¡Hola!</h2>
-        <p class="hello-text">
-          Suscríbete a nuestra newsletter para estar al día de nuestras noticias
-        </p>
-        <div class="buttons">
-          <button class="button button-rej">Rechazar</button>
-          <button class="button button-susc">Suscribirme</button>
-        </div>
+        <nav>
+          <ul class="menu">
+            <li>Inicio</li>
+            <li>Archivo</li>
+            <li>Contacto</li>
+          </ul>
+        </nav>
       </div>
-    </section>
-
-    <!--Fin parte nueva del ejercicio-->
-
-    <header>
-      <div class="name">Mi blog</div>
-      <nav>
-        <ul class="menu">
-          <li class="item-nav item-1">Inicio</li>
-          <li class="item-nav item-2">Archivo</li>
-          <li class="item-nav item-3">Contacto</li>
-        </ul>
-      </nav>
     </header>
-    <main>
-      <div class="info">
-        <div class="author">Sara Palomo</div>
-        <div class="date">Posted on November 7th 2021</div>
-      </div>
-      <article class="content">
-        <h1 class="title">
-          El veloz murciélago hindú comía feliz cardillo y kiwi
-        </h1>
+    <main class="main">
+      <!--Inicio parte nueva del ejercicio. ¿Dónde debería ir una ventana de este tipo dentro del HTML?-->
 
-        <p>
+      <section class="hello-screen">
+        <div class="hello-window">
+          <h2 class="hello-title">¡Hola!</h2>
+          <p class="hello-text">
+            Suscríbete a nuestra newsletter para estar al día de nuestras
+            noticias
+          </p>
+          <div class="buttons">
+            <button class="button button-rej">Rechazar</button>
+            <button class="button button-susc">Suscribirme</button>
+          </div>
+        </div>
+      </section>
+
+      <!--Fin parte nueva-->
+
+      <section class="info">
+        <p>Sara Palomo</p>
+        <p>Posted on November 7th 2021</p>
+      </section>
+      <article class="post">
+        <h2>El veloz murciélago hindú comía feliz cardillo y kiwi</h2>
+
+        <p class="post-text">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum vero
           adipisci libero numquam nemo repellat quia nulla ab debitis officia ad
           maiores, sed maxime. Accusamus porro alias molestiae doloremque.
@@ -62,7 +64,7 @@
           voluptas architecto laborum, nesciunt incidunt, quae animi a magnam
           aperiam pariatur!
         </p>
-        <p>
+        <p class="post-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
           distinctio hic ut minus eum repellat amet qui ea impedit eveniet iste
           assumenda, sunt ratione repellendus modi id fugit nemo quos? Lorem
@@ -78,7 +80,7 @@
           Itaque laudantium unde harum quo ratione, ducimus id quia iste ad
           nostrum?
         </p>
-        <p>
+        <p class="post-text">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis
           eius tempora veniam impedit illo dolore, pariatur temporibus aliquid
           suscipit possimus recusandae quas ipsa atque! Voluptas doloremque
@@ -91,7 +93,7 @@
           fuga. Sequi tempore a consequatur labore maxime. Ullam consequatur
           illo culpa.
         </p>
-        <p>
+        <p class="post-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quos
           necessitatibus repudiandae reiciendis sit animi, optio vitae corrupti
           modi libero placeat rerum vel enim voluptatem minima ex! Rem, animi
@@ -100,7 +102,7 @@
           maiores officiis! Cumque magnam ipsam harum saepe vero ratione fuga
           adipisci cum!
         </p>
-        <p>
+        <p class="post-text">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor
           expedita sit eveniet, ex magnam commodi, quae ipsum deserunt harum qui
           reprehenderit nihil? Nesciunt voluptatum blanditiis vitae, non velit
@@ -116,7 +118,7 @@
           possimus deserunt praesentium laudantium eligendi iusto impedit ad
           laboriosam harum labore! Eveniet.
         </p>
-        <p>
+        <p class="post-text">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quidem
           officiis deserunt quos neque debitis, id repellat provident
           perferendis, iste veniam porro eum hic illo nesciunt incidunt
@@ -127,15 +129,17 @@
         </p>
       </article>
     </main>
-    <footer>
-      <div class="copy">© Copyright Sara Palomo</div>
-      <nav>
-        <ul class="media">
-          <li class="tw">Twitter</li>
-          <li class="ig">Instagram</li>
-          <li class="gh">GitHub</li>
-        </ul>
-      </nav>
+    <footer class="footer">
+      <div class="container-f">
+        <small class="copy">&copy; Copyright Sara Palomo</small>
+        <nav>
+          <ul class="media">
+            <li class="tw">Twitter</li>
+            <li class="ig">Instagram</li>
+            <li class="gh">GitHub</li>
+          </ul>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>

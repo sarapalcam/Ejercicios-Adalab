@@ -1,8 +1,7 @@
-#Ejercicio de la clase 1.2.
+# Una página clásica
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+Realizar una página semántica explicando algunos de los lenguajes de programación que vamos a aprender durante el curso, con:
 
--Esto es un marcador
-**Esto en negrita**
-
-¿Cómo se ponen flechas? ¿Cómo se pone código? Investigar cositas. Estas cosas se van buscando cada vez que lo necesite.
+1. Un título principal.
+2. Contenido: tres párrafos con el contenido, dos párrafos con anuncios secundarios, un listado de 4 lenguajes de programación.
+3. Un texto de copy (© 2020).

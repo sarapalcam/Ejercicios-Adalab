@@ -9,15 +9,107 @@ Para redondear los bordes debéis usar border-radius con unidades en píxel (por
 * {
   font-family: "Lato", sans-serif;
   color: gray;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .main {
   display: flex;
+  max-width: 840px;
 }
 
 .img {
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 5px;
+}
+
+.info {
+  padding: 0 15px;
+  width: 100%;
+  background-color: lightyellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 370px;
+}
+
+.name {
+  font-size: 18px;
+  color: rgb(51, 51, 51);
+}
+
+.bussiness {
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 15px 0;
+}
+
+.button-1 {
+  padding: 10px 0;
+  width: 140px;
+  background-color: lightgray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  line-height: 13.3px;
+  margin-right: 10px;
+}
+
+.button-2 {
+  padding: 10px 0;
+  width: 140px;
+  background-color: white;
+  border: solid gray 2px;
+  border-radius: 5px;
+  line-height: 13.3px;
+}
+
+.score {
+  width: 300px;
+  height: 120px;
+
+  display: flex;
+  padding: 10px;
+}
+
+.score-text {
+  min-width: 120px;
+}
+
+.val {
+  font-size: 14px;
+  font-weight: bolder;
+  color: rgb(51, 51, 51);
+}
+
+.comment {
+  font-size: 14px;
+}
+
+.score-img {
+  display: flex;
+  flex-direction: column;
+}
+
+.rank {
+  color: rgb(51, 51, 51);
+  font-weight: bolder;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  background-color: lightgray;
+  width: 40px;
+  height: 40px;
+  padding-top: 9px;
+  border-radius: 10px;
+  margin-left: 12px;
+}
+
+.star {
+  width: 50px;
+  height: 50px;
+  margin-left: 6px;
+  margin-top: 5px;
 }
