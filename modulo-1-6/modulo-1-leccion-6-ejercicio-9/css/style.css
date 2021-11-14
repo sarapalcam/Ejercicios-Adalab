@@ -1,13 +1,13 @@
 body {
-  background-color: rgb(167, 167, 167);
-  width: 100%;
+  background-color: rgb(187, 187, 187);
   height: 100vh;
+  width: 100%;
 }
 
-.site-name {
-  font-size: 52px;
-  font-weight: 600;
-  margin-bottom: 40px;
+.header {
+  font-size: 42px;
+  font-weight: bolder;
+  padding-bottom: 30px;
 }
 
 .menu {
@@ -18,6 +18,7 @@ body {
   color: blue;
   text-decoration: underline;
   font-size: 20px;
+  line-height: 24px;
 }
 
 .main-info {
@@ -25,48 +26,26 @@ body {
 }
 
 .main-title {
-  font-size: 36px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: bolder;
   margin-bottom: 20px;
 }
 
-.main-text {
-  font-size: 18px;
-  line-height: 16pt;
-}
-
-.main-image {
-  display: none;
-  background-color: orange;
-  min-width: 200px;
-  min-height: 200px;
-  margin: 20px 0 30px 20px;
-}
-
 .related-info {
-  background-color: grey;
-  margin-top: 30px;
+  background-color: gray;
+  margin-top: 15px;
 }
 
 .related-title {
-  font-size: 30px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: bolder;
   margin-bottom: 15px;
 }
 
-.related-text {
-  font-size: 18px;
-  line-height: 16pt;
-}
-
 @media all and (min-width: 480px) {
-  .site-name {
-    font-size: 46px;
-    margin-bottom: 30px;
-  }
-
   .main {
     display: flex;
+    margin: 0 20px 15px 0;
   }
 
   .menu {
@@ -74,36 +53,35 @@ body {
     margin-right: 20px;
   }
 
-  .info {
+  .main-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-container {
     display: flex;
     flex-direction: column;
   }
 
-  .main-info {
-    margin-right: 20px;
-  }
-
-  .main-body {
-    display: flex;
-  }
-
   .main-image {
-    display: block;
-  }
-
-  .related-info {
-    margin-right: 20px;
+    background-color: orange;
+    min-width: 200px;
+    min-height: 250px;
+    margin: 30px 0;
   }
 }
 
 @media all and (min-width: 1000px) {
   .info {
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
   }
 
-  .main-info {
-    height: 86vh;
+  .related-info {
+    margin: 0 0 0 20px;
+  }
+
+  .main {
+    margin-right: 0;
   }
 }
