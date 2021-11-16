@@ -1,0 +1,8 @@
+.main {
+  background-color: $main-color-bg;
+  color: $main-color-txt;
+  padding: 20px 15px;
+  &__section--p {
+    height: 50vh;
+  }
+}
