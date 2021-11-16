@@ -3,10 +3,10 @@
   color: $header-color-txt;
   padding: 20px 15px;
   height: 75px;
-  @media all and (min-width: 768px) {
+  @include tablet(768px) {
     height: 100px;
   }
-  @media all and (min-width: 1280px) {
+  @include tablet(1280px) {
     height: 110px;
   }
 }

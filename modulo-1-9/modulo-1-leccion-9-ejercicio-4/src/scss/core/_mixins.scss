@@ -1,0 +1,5 @@
+@mixin tablet($width) {
+  @media all and (min-width: $width) {
+    @content;
+  }
+}
