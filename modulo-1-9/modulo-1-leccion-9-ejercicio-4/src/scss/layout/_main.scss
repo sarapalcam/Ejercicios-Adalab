@@ -8,7 +8,7 @@
   @include tablet(768px) {
     background-color: white;
   }
-  @include tablet(1280px) {
+  @include desktop(1280px) {
     background-color: $main-color-bg;
   }
 }
@@ -19,7 +19,7 @@
     font-size: 24px;
     color: $header-color-txt;
   }
-  @include tablet(1280px) {
+  @include desktop(1280px) {
     font-size: 44px;
     color: $main-color-txt;
   }
