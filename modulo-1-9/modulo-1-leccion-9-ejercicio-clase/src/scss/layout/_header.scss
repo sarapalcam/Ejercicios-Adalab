@@ -1,0 +1,19 @@
+$color: red;
+
+.menu {
+  list-style-type: none;
+  &__item {
+    display: inline;
+    &--standar {
+      color: $color;
+    }
+    &--active {
+      color: blue;
+      font-weight: bold;
+    }
+    /*Si no se pone "all and" se sobreentiende que nos referimos a "all and"*/
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+}
