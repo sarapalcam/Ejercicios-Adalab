@@ -35,9 +35,9 @@
   padding: 0 5px;
 }
 
-.selectForm {
+.inputDate {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   margin-top: 5px;
 }
 
@@ -65,4 +65,15 @@
   font-size: 24px;
   font-weight: bold;
   margin: solid 1px rgb(67, 134, 67);
+}
+
+.inputDefault {
+  margin-top: 10px;
+  width: 50%;
+  height: 25px;
+  border-radius: 8px;
+  background-color: rgb(172, 69, 69);
+  color: white;
+  font-weight: bold;
+  transform: translate(50%, 0);
 }
