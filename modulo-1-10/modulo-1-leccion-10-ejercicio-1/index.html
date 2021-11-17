@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Mi primer formulario</title>
+  </head>
+  <body>
+    <form
+      class="form"
+      action="https://adalab-server-form.herokuapp.com/"
+      method="POST"
+    >
+      <label for="firstName">Nombre</label>
+      <input
+        class="form_input"
+        type="text"
+        name="firstName"
+        id="firstName"
+        placeholder="Escriba aquí su nombre"
+      />
+      <label for="lastName">Apellido</label>
+      <input
+        class="form_input"
+        type="text"
+        name="lastName"
+        id="lastName"
+        placeholder="Escriba aquí su apellido"
+      />
+      <label for="email">Correo electrónico</label>
+      <input
+        class="form_input"
+        type="mail"
+        name="mail"
+        id="mail"
+        placeholder="Escriba aquí su correo electrónico"
+      />
+      <label for="street">Calle</label>
+      <input
+        class="form_input"
+        type="text"
+        name="street"
+        id="street"
+        placeholder="Escriba aquí l nombre de su calle"
+      />
+      <label for="city">Ciudad</label>
+      <input
+        class="form_input"
+        type="text"
+        name="city"
+        id="city"
+        placeholder="Escriba aquí el nombre de su ciudad"
+      />
+      <label for="province">Provincia</label>
+      <input
+        class="form_input"
+        type="text"
+        name="province"
+        id="province"
+        placeholder="Escriba aquí el nombre de su provincia"
+      />
+      <label for="country">País</label>
+      <input
+        class="form_input"
+        type="text"
+        name="country"
+        id="country"
+        placeholder="Escriba aquí el nombre de su país"
+      />
+      <label for="id">DNI</label>
+      <input
+        class="form_input"
+        type="text"
+        name="id"
+        id="id"
+        placeholder="Escriba aquí su DNI"
+      />
+      <label for="phoneNumber">Número de teléfono</label>
+      <input
+        class="form_input"
+        type="tel"
+        name="phoneNumber"
+        id="phoneNumber"
+        placeholder="Escriba aquí su número de teléfono"
+      />
+      <label for="password">Contraseña</label>
+      <input
+        class="form_input"
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Escriba aquí su contraseña"
+      />
+      <label for="passwordValidation">Confirmar contraseña</label>
+      <input
+        class="form_input"
+        class="fomLabel"
+        type="password"
+        name="passwordValidation"
+        id="passwordValidation"
+        placeholder="Repita aquí su contraseña"
+      />
+      <input class="form_submit" type="submit" value="Mandar info" />
+    </form>
+  </body>
+</html>
