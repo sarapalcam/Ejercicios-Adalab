@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: rgb(32, 32, 185);
+}
+
+.main {
+  max-width: 450px;
+  background-color: rgb(210, 220, 243);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.subtitle {
+  margin: 15px 0;
+  font-weight: lighter;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputForm {
+  max-width: 220px;
+  margin-bottom: 10px;
+  height: 25px;
+  border-radius: 5px;
+  border: 0.5px solid rgb(169, 182, 212);
+  padding: 0 5px;
+}
+
+.selectForm {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.smallBirth {
+  margin-left: 8px;
+}
+
+.genderForm {
+  margin: 15px 0 10px 5px;
+}
+
+.inputForm__height {
+  margin-top: 10px;
+}
+
+.inputForm__terms {
+  margin-top: 10px;
+}
+
+.inputSubmit {
+  height: 40px;
+  background-color: rgb(82, 189, 82);
+  color: white;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  margin: solid 1px rgb(67, 134, 67);
+}

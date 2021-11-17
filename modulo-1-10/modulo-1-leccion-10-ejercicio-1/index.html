@@ -20,6 +20,7 @@
         name="firstName"
         id="firstName"
         placeholder="Escriba aquí su nombre"
+        required
       />
       <label for="lastName">Apellido</label>
       <input
@@ -29,13 +30,14 @@
         id="lastName"
         placeholder="Escriba aquí su apellido"
       />
-      <label for="email">Correo electrónico</label>
+      <label for="mail">Correo electrónico</label>
       <input
         class="form_input"
-        type="mail"
+        type="email"
         name="mail"
         id="mail"
         placeholder="Escriba aquí su correo electrónico"
+        required
       />
       <label for="street">Calle</label>
       <input
@@ -44,6 +46,7 @@
         name="street"
         id="street"
         placeholder="Escriba aquí l nombre de su calle"
+        required
       />
       <label for="city">Ciudad</label>
       <input
@@ -52,6 +55,8 @@
         name="city"
         id="city"
         placeholder="Escriba aquí el nombre de su ciudad"
+        required
+        value="Madrid"
       />
       <label for="province">Provincia</label>
       <input
@@ -60,6 +65,8 @@
         name="province"
         id="province"
         placeholder="Escriba aquí el nombre de su provincia"
+        required
+        value="Madrid"
       />
       <label for="country">País</label>
       <input
@@ -68,6 +75,8 @@
         name="country"
         id="country"
         placeholder="Escriba aquí el nombre de su país"
+        required
+        value="España"
       />
       <label for="id">DNI</label>
       <input
@@ -76,6 +85,7 @@
         name="id"
         id="id"
         placeholder="Escriba aquí su DNI"
+        required
       />
       <label for="phoneNumber">Número de teléfono</label>
       <input
@@ -84,6 +94,7 @@
         name="phoneNumber"
         id="phoneNumber"
         placeholder="Escriba aquí su número de teléfono"
+        required
       />
       <label for="password">Contraseña</label>
       <input
@@ -92,6 +103,7 @@
         name="password"
         id="password"
         placeholder="Escriba aquí su contraseña"
+        required
       />
       <label for="passwordValidation">Confirmar contraseña</label>
       <input
@@ -101,6 +113,7 @@
         name="passwordValidation"
         id="passwordValidation"
         placeholder="Repita aquí su contraseña"
+        required
       />
       <input class="form_submit" type="submit" value="Mandar info" />
     </form>
