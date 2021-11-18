@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-fluid {
+  //   display: grid;
+  //   grid-template-columns: repeat(12, 1fr);
+  //   grid-template-rows: 1fr 1fr 1fr;
+  height: 100vh;
+  color: lightyellow;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.container__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--header {
+    background-color: pink;
+    //   grid-column: span 12;
+    height: 20vh;
+  }
+  &--menu {
+    background-color: rgb(87, 0, 128);
+    //   grid-column: span 4;
+    height: 60vh;
+  }
+  &--content {
+    background-color: salmon;
+    //   grid-column: span 8;
+    height: 60vh;
+  }
+  &--footer {
+    background-color: lightblue;
+    //   grid-column: span 12;
+    height: 20vh;
+  }
+}
