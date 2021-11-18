@@ -22,11 +22,14 @@
           name="firstName"
           placeholder="First name"
         />
+        <!--EJEMPLO DE REGEX PATTERN: ENTRE LLAVES VA EL NÚMERO DE CARACTERES // el title es para poner el cartel de error-->
         <input
           class="inputForm"
           type="text"
           name="surname"
           placeholder="Surname"
+          pattern="^[a-zA-Z]{2-10}$"
+          title="solo acepta letras y entre 2 y 10 caracteres"
         />
         <input
           class="inputForm"
@@ -64,9 +67,12 @@
           >
         </div>
 
+        <!-- IMPORTANTE RECORDAR
+        <option value="disabled" disabled selected hidden>Day</option> -->
+
         <!--<div class="selectForm">
           <select name="day" id="birthdayDate">
-            <option value="disabled" disabled selected>Day</option>
+            <option value="disabled" disabled selected hidden>Day</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
