@@ -1,0 +1,61 @@
+.container {
+  height: 50vh;
+  border: 2px dashed red;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 20% 50%;
+  @media (min-width: 900px) {
+    grid-template-columns: 4fr;
+    grid-template-areas: "header header header header" "menu contenido contenido  destacados" "footer footer footer footer";
+  }
+  &__box {
+    border: solid 2px purple;
+    padding: 5px;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--header {
+      grid-column: span 4;
+      background-color: rebeccapurple;
+      @media (min-width: 900px) {
+        grid-area: header;
+      }
+    }
+    &--contenido {
+      grid-column: 1/4;
+      background-color: royalblue;
+      grid-row: 2/3;
+      @media (min-width: 800px) {
+        grid-column: 4/5;
+        grid-row: 2/4;
+      }
+      @media (min-width: 900px) {
+        grid-area: contenido;
+      }
+    }
+    &--destacados {
+      background-color: salmon;
+      @media (min-width: 800px) {
+        grid-column: 1/4;
+        grid-row: 2/3;
+      }
+      @media (min-width: 900px) {
+        grid-area: destacados;
+      }
+    }
+    &--menu {
+      @media (min-width: 900px) {
+        grid-area: menu;
+      }
+    }
+    &--footer {
+      @media (min-width: 900px) {
+        background-color: sandybrown;
+        grid-area: footer;
+      }
+    }
+  }
+}
+
+/*Para colocar las cajas se pude usar order, y en ese caso sería más conveniente usar span para determinar el ancho y alto de cada una de ellas. Si usasemos grid-colum frid-row sería un poco más caótico*/
