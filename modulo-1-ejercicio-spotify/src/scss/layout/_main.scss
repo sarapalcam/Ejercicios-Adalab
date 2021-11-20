@@ -1,6 +1,4 @@
 .main {
-  background-color: lavender;
-  @media (min-width: 768px) {
-    background-color: lightcoral;
-  }
+  display: flex;
+  flex-direction: column;
 }

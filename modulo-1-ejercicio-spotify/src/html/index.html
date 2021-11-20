@@ -5,103 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="”theme-color”" content="”#ffffff”" />
+    <link
+      rel="preload"
+      href="https://open.scdn.co/fonts/CircularSpUIv3T-Book.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="true"
+    />
+    <link
+      rel="preload"
+      href="https://open.scdn.co/fonts/CircularSpUIv3T-Black.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="true"
+    />
+    <link
+      rel="preload"
+      href="https://open.scdn.co/fonts/CircularSpUIv3T-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="true"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <title>Spotify</title>
   </head>
   <body>
-    <header class="header">
-      <img class="logo" src="./images/logo.png" alt="Spotify logo" />
-      <img src="./images/menu-icon.png" alt="Menú hamburguesa" class="hamb" />
-      <nav class="nav">
-        <ul class="list">
-          <li>
-            <a href="">Premium </a>
-          </li>
-          <li>
-            <a href="">Ayuda</a>
-          </li>
-          <li>
-            <a href="">Descargar</a>
-          </li>
-          <li>
-            <a href="">Registrarse</a>
-          </li>
-          <li>
-            <a href="">Iniciar sesión</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <include src="./partials/header.html"></include>
     <main class="main">
-      <section class="hero">
-        <h1 class="title-hero">Prueba Premium gratis 3 meses</h1>
-        <h2 class="subtitle">
-          Escucha millones de canciones sin anuncios, a la carta y sin conexión.
-        </h2>
-        <div class="button-container">
-          <a href="" class="button">Ver planes</a>
-        </div>
-        <small class="small">
-          Rigen términos y condiciones. Los tres meses gratis no están
-          disponibles para usuarios que ya hayan probado Premium.
-        </small>
-      </section>
-
-      <section class="content">
-        <h2 class="title2">¿Por qué pasarte a Premium?</h2>
-
-        <div class="benefits">
-          <include
-            src="./partials/article.html"
-            img="benefit-1.png"
-            title="Descarga música"
-            text="Llévala siempre contigo"
-          ></include>
-          <include
-            src="./partials/article.html"
-            img="benefit-2.png"
-            title="Sin anuncios"
-            text="Disfruta de música sin interrupciones"
-          ></include>
-          <include
-            src="./partials/article.html"
-            img="benefit-3.png"
-            title="Escucha lo que quieras"
-            text="Incluso en el móvil"
-          ></include>
-
-          <include
-            src="./partials/article.html"
-            img="benefit-4.png"
-            title="Salta todas las canciones que quieras"
-            text="Simplemente dale a siguiente"
-          ></include>
-        </div>
-      </section>
+      <include src="./partials/hero.html"></include>
+      <include src="./partials/benefits.html"></include>
     </main>
-    <!--
-    <footer>
-      <nav>
-        <ul>
-          <li>
-            <a href="">Legal</a>
-          </li>
-          <li>
-            <a href="">Cookies</a>
-          </li>
-          <li>
-            <a href="">Información sobre los anuncios</a>
-          </li>
-        </ul>
-      </nav>
-      <span
-        >España
-        <img
-          src="./images/es.svg"
-          alt="Salta todas las canciones que quieras"
-        />
-      </span>
-      <span>Spotify AB</span>
-    </footer> -->
+    <include src="./partials/footer.html"></include>
   </body>
 </html>
