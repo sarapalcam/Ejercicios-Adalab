@@ -1,65 +1,60 @@
 .hero {
   background-color: rgb(73, 160, 231);
-  padding: 170px 15px 25px 15px;
-  color: white;
   width: 100%;
-  @include tablet {
-    height: 450px;
-    padding: 130px 0 0 25px;
-  }
+  height: 100vh;
+  color: white;
   &__content {
+    margin: 0 15px;
+    position: absolute;
+    bottom: 25px;
     @include tablet {
-      position: absolute;
+      margin-left: 30px;
+    }
+    @include desktop {
+      top: 250px;
     }
   }
   &__title {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: rem(48px);
+    margin-bottom: 25px;
     @include tablet {
-      font-size: 3.7rem;
-      line-height: 4rem;
-      max-width: 700px;
+      font-size: rem(64px);
+      line-height: rem(80px);
+      max-width: 740px;
+    }
+    @include desktop {
+      font-size: rem(100px);
+      max-width: 1200px;
+      line-height: rem(115px);
     }
   }
   &__subtitle {
-    line-height: 1.5;
+    line-height: 1.2;
     margin-bottom: 15px;
+    font-size: rem(24px);
     @include tablet {
-      font-size: 1.2rem;
+      font-size: rem(26px);
+      line-height: rem(39px);
       margin-bottom: 30px;
     }
-  }
-  &__button {
-    display: block;
-    text-align: center;
-    background-color: rgb(30, 215, 96);
-    border: 0;
-    padding-top: 10px;
-    padding-bottom: 8px;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 350px;
-    @include tablet {
-      width: 170px;
-    }
-    &--link {
-      font-size: 14px;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: white;
-      font-weight: bold;
-      @include tablet {
-        font-size: 12px;
-      }
+    @include desktop {
+      font-size: rem(32px);
+      max-width: 1200px;
+      line-height: rem(36px);
+      margin-bottom: 50px;
     }
   }
+
   &__small {
     display: block;
     margin-top: 20px;
-    font-size: 9px;
-    line-height: 1.5;
+    font-size: rem(9px);
+    line-height: rem(16px);
     @include tablet {
-      margin-bottom: 20px;
+      font-size: rem(11px);
+    }
+    @include tablet {
+      margin-top: 40px;
     }
   }
 }
@@ -68,13 +63,14 @@
   display: none;
   @include tablet {
     display: block;
-    height: 370px;
-    width: 370px;
+    height: 80vh;
+    width: 70vw;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: right bottom;
     background-image: url(../images/premium_dancer.png);
     position: absolute;
     right: 0;
-    top: 80px;
+    bottom: 0;
   }
 }

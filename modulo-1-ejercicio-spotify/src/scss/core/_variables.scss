@@ -1,7 +1,7 @@
-* {
-  font-family: "spotify-circular", Helvetica, Arial, sans-serif;
-}
+$fontFamily: "spotify-circular", Helvetica, Arial, sans-serif;
+$fontSize: 16px;
+$brandColor: rgb(30, 215, 96);
 
-:root {
-  font-size: 16px;
+* {
+  font-family: $fontFamily;
 }
