@@ -1,0 +1,76 @@
+.hero {
+  background-color: rgb(73, 160, 231);
+  width: 100%;
+  height: 100vh;
+  color: white;
+  &__content {
+    margin: 0 15px;
+    position: absolute;
+    bottom: 25px;
+    @include tablet {
+      margin-left: 30px;
+    }
+    @include desktop {
+      top: 250px;
+    }
+  }
+  &__title {
+    font-size: rem(48px);
+    margin-bottom: 25px;
+    @include tablet {
+      font-size: rem(64px);
+      line-height: rem(80px);
+      max-width: 740px;
+    }
+    @include desktop {
+      font-size: rem(100px);
+      max-width: 1200px;
+      line-height: rem(115px);
+    }
+  }
+  &__subtitle {
+    line-height: 1.2;
+    margin-bottom: 15px;
+    font-size: rem(24px);
+    @include tablet {
+      font-size: rem(26px);
+      line-height: rem(39px);
+      margin-bottom: 30px;
+    }
+    @include desktop {
+      font-size: rem(32px);
+      max-width: 1200px;
+      line-height: rem(36px);
+      margin-bottom: 50px;
+    }
+  }
+
+  &__small {
+    display: block;
+    margin-top: 20px;
+    font-size: rem(9px);
+    line-height: rem(16px);
+    @include tablet {
+      font-size: rem(11px);
+    }
+    @include tablet {
+      margin-top: 40px;
+    }
+  }
+}
+
+.img-hero {
+  display: none;
+  @include tablet {
+    display: block;
+    height: 80vh;
+    width: 70vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-image: url(../images/premium_dancer.png);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

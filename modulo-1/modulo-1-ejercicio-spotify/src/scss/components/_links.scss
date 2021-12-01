@@ -1,0 +1,49 @@
+@media (min-width: 768px) {
+  .link_nav_header {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: rem(13px);
+    &:hover {
+      color: $brandColor;
+    }
+  }
+}
+
+.hero__button {
+  display: block;
+  text-align: center;
+  background-color: $brandColor;
+  border: 0;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 350px;
+  font-size: rem(14px);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  @include tablet {
+    font-size: rem(12px);
+    width: 170px;
+  }
+  @include desktop {
+    font-size: rem(14px);
+    width: 200px;
+  }
+  &:hover {
+    transform: scale(1.1);
+    background-color: rgb(55, 230, 116);
+  }
+}
+
+.footer_link {
+  text-decoration: none;
+  color: white;
+  font-size: 10px;
+  &:hover {
+    color: $brandColor;
+  }
+}

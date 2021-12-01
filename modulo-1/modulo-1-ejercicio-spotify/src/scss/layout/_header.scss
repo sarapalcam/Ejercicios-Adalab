@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  z-index: 999;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    @include tablet {
+      width: 750px;
+    }
+    @include desktop {
+      width: 900px;
+    }
+  }
+  &__logo {
+    height: 50px;
+  }
+  &__hamb {
+    width: 30px;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__nav {
+    display: none;
+    @include tablet {
+      display: block;
+    }
+  }
+  &__ul {
+    display: none;
+    @include tablet {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &--li {
+      padding: 0 15px;
+    }
+  }
+}
+
+.line_nav {
+  border-left: solid white 1px;
+}
