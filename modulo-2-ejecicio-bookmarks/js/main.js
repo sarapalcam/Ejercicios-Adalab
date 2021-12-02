@@ -62,13 +62,26 @@ const menuDropdown = document.querySelector(".js-menudropdown");
 const menuDataActions = document.querySelector(".js-data-actions__add");
 const dataList = document.querySelector(".js-data-list");
 
+const dataTypeView = document.querySelector(".js-type-of-view");
+
+const inputSearchDesc = document.querySelector(".js-input-search");
+inputSearchDesc.value = " ";
+const inputSearch = inputSearchDesc.value;
+
+let html = "";
+
+menuDropdown.classList.remove("collapsed");
+menuDataActions.classList.remove("hidden");
+
 const bmk1Url =
   "https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-2-programando-la-web/javascript/2_1_intro_a_la_programacion";
 const bmk1Desc = "JS en los materiales de Adalab";
 const bmk1Seen = "checked";
 const bmk1Tags1 = "javascript";
 let bmk1Tags2 = "HTML";
-let html = `<article class="data__item">
+
+if (bmk1Desc.includes(inputSearch)) {
+  html += `<article class="data__item">
 <p class="item__url">
   <a href=${bmk1Url.replace(
     "https://",
@@ -85,6 +98,7 @@ let html = `<article class="data__item">
   <li class="item__tag">${bmk1Tags1}</li><li class="item__tag">${bmk1Tags2.toLowerCase()}</li>
 </ul>
 </article>`;
+}
 
 const bmk2Url =
   "https://thesmartcoder.dev/9-awesome-projects-you-can-build-with-vanilla-javascript/";
@@ -92,7 +106,9 @@ const bmk2Desc = "Ideas de proyectos JS";
 const bmk2Seen = "checked";
 const bmk2Tags1 = "javascript";
 const bmk2Tags2 = "portfolio";
-html += `<article class="data__item">
+
+if (bmk2Desc.includes(inputSearch)) {
+  html += `<article class="data__item">
 <p class="item__url">
   <a href="${bmk2Url.substr(
     8
@@ -105,6 +121,7 @@ html += `<article class="data__item">
   <li class="item__tag">${bmk2Tags1}</li><li class="item__tag">${bmk2Tags2}</li>
 </ul>
 </article>`;
+}
 
 const bmk3Url =
   "https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-1-html-y-css/1_1_intro_a_la_web";
@@ -112,7 +129,9 @@ const bmk3Desc = "HTML en los materiales de Adalab";
 const bmk3Seen = "";
 let bmk3Tags1 = "HTML";
 let bmk3Tags2 = "CSS";
-html += `<article class="data__item">
+
+if (bmk3Desc.includes(inputSearch)) {
+  html += `<article class="data__item">
 <p class="item__url">
   <a href=${bmk3Url.slice(
     8
@@ -126,7 +145,16 @@ html += `<article class="data__item">
   <li class="item__tag">${bmk3Tags1.toLowerCase()}</li><li class="item__tag">${bmk3Tags2.toLowerCase()}</li>
 </ul>
 </article>`;
+}
 
-menuDropdown.classList.remove("collapsed");
-menuDataActions.classList.remove("hidden");
 dataList.innerHTML = html;
+
+/*DÍA 3*/
+
+if (dataTypeView.classList.contains(".tableview")) {
+  dataTypeView.classList.remove(".tableview");
+  dataTypeView.classList.add(".listview");
+} else if (dataTypeView.classList.contains(".listview")) {
+  dataTypeView.classList.remove(".listview");
+  dataTypeView.classList.add(".tableview");
+}
