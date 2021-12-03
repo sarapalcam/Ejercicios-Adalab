@@ -1,15 +1,15 @@
 "use strict";
 
 const background = document.querySelector(".js-background");
-const windowScroll = window.scrollY;
+// const windowScroll = window.scrollY;
 
 function changeColor() {
-  if (windowScroll >= 250) {
-    background.classList.remove(".red");
-    background.classList.add(".blue");
+  if (window.scroll(0, 250)) {
+    background.classList.remove("red");
+    background.classList.add("blue");
   } else {
-    background.classList.remove(".blue");
-    background.classList.add(".red");
+    background.classList.remove("blue");
+    background.classList.add("red");
   }
 }
 
