@@ -4,13 +4,13 @@ const background = document.querySelector(".js-background");
 // const windowScroll = window.scrollY;
 
 function changeColor() {
-  if (window.scroll(0, 250)) {
-    background.classList.remove("red");
-    background.classList.add("blue");
-  } else {
-    background.classList.remove("blue");
-    background.classList.add("red");
-  }
+ if (window.scrollY <1000){
+   background.classList.add("blue");
+ } else if (window.scrollY > 1000) {
+   background.classList.remove("blue");
+   background.classList.add("red");
+ }
 }
 
-background.addEventListener("scroll", changeColor);
+window.addEventListener("scroll", changeColor);
+

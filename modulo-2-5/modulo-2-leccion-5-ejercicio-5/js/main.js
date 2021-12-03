@@ -1,24 +1,27 @@
 "use strict";
 
-// const window = document;
+const bodyHTML = document.querySelector(".body");
 
-// function keyboardEvent(event) {
-//   document.innerHTML;
-// }
 
-const keyPressed = document.querySelector(".body");
-let keyPressed;
-
-function keyboardEvent(event) {
+function changeColor(event){
   console.log(event);
-  const key = event;
-  if (key === "r") {
-    keyPressed.classList.add(".red");
-  } else if (key === "m") {
-    keyPressed.classList.add(".pruple");
+  // console.log(KeyboardEvent.key);
+  if (event.key === 'r'){
+    bodyHTML.classList.remove("purple");
+    bodyHTML.classList.remove("green");
+  bodyHTML.classList.add("red");
+  
+
+  } else if (event.key === 'm'){
+    bodyHTML.classList.remove("green");
+    bodyHTML.classList.remove("red");
+    bodyHTML.classList.add("purple");
   } else {
-    keyPressed.classList.add(".green");
+    bodyHTML.classList.remove("purple");
+    bodyHTML.classList.remove("red");
+    bodyHTML.classList.add("green");
   }
 }
 
-keyPressed.addEventListener("keydown", keyboardEvent);
+document.addEventListener("keydown", changeColor);
+
