@@ -38,12 +38,33 @@ const countAdalabers = () => {
   console.log(`Hay un total de ${adalabers.length} adalabers en el listado`);
 };
 
-/* Una función countAdalabers que devuelve el número de adalabers en el listado.
+let acc = 0;
 
-Una función averageAge que devuelve la media de edad de listado.
+function averageAge(array) {
+  for (let i = 0; i < array.length; i++) {
+    acc += array[i].age;
+  }
+  return acc / array.length;
+}
 
-Una función theYoungest que devuelve el nombre de la adalaber más joven.
+console.log(
+  `La media de edad de las adalabers es de ${averageAge(adalabers)} años`
+);
+
+function theYoungest(array) {
+  let minAge = Math.min.apply(
+    null,
+    array.map(function (object) {
+      return object.age;
+    })
+  );
+  return minAge;
+}
+
+console.log(`La adalaber más joven tiene ${theYoungest(adalabers)} años`);
+
+/* 
 
 Una función countDesigners que devuelve el número de adalabers que son diseñadoras.
 
-Según vayáis creando las funciones, debéis ir probando que funcionan invocándolas con nuestra estrucutra de datos como argumento. Al final, modificad la estructura de datos para añadir, modificar o quitar adalabers. Y probad que las funciones siguen devolviendo el valor correcto.*/
+*/
