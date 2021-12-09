@@ -186,3 +186,5 @@ btnAdd.addEventListener("click", showAddForm);
 
 /*Añadir los datos del listado*/
 dataList.innerHTML = html;
+
+/*CONSULTAR CÓMO LO HA HECHO YANELIS PORQUE LAS FUNCIONES ESTÁN MUCHO MÁS DESGRANADAS*/
