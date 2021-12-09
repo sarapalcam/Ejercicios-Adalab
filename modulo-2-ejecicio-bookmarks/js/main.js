@@ -171,8 +171,7 @@ function handleClickSelectedTable(event) {
   tableBtn.classList.add("selected");
 }
 
-function showAddForm(event) {
-  event.preventDefault();
+function showAddForm() {
   menuDataActions.classList.remove("hidden");
 }
 

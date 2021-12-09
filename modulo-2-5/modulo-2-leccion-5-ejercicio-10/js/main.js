@@ -6,30 +6,23 @@ const eternalSunshineOfTheSM = "Eternal sunshine of the spotless mind";
 const blueVelvet = "Blue velvet";
 const split = "Split";
 
-const bodyHTML = document.querySelector(".js-body");
+const moviesList = document.querySelector(".js-moviesList");
 const btnStart = document.querySelector(".js-btn");
 
 function showMovies() {
-  bodyHTML.innerHTML += `<p>
-  <ul>
-      <li>${inception}</li>
+  moviesList.innerHTML += ` <li>${inception}</li>
       <li>${theButterFlyEffect}</li>
       <li>${eternalSunshineOfTheSM}</li>
       <li>${blueVelvet}</li>
       <li>${split}</li>
   </ul>
-</p>`;
+`;
 }
 
 function selectMovie(event) {
-  const selectedMovie = event.currentTarget;
-  if (selectedMovie !== "") {
-    console.log(selectedMovie);
-  }
+  const eventTarget = event.target.innerText;
+  console.log(`Has seleccionado la película ${eventTarget}`);
 }
 
 btnStart.addEventListener("click", showMovies);
-
-inception.addEventListener("click", selectMovie);
-
-/* No sé cómo hacer la segunda parte de este ejericio */
+moviesList.addEventListener("click", selectMovie);
