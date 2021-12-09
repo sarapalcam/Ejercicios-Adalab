@@ -22,7 +22,7 @@
   <body>
     <div class="page">
       <header class="header">
-        <nav class="header__menu">
+        <nav class="header__menu js-burgerBtn">
           <a
             class="header__menulink"
             href=""
@@ -92,14 +92,14 @@
         <fieldset class="menu__data-layout">
           <h2 class="menu__title">Visualización</h2>
           <button
-            class="data-layout__button"
+            class="data-layout__button js-cardsBtn"
             title="Mostrar los bookmarks organizados como una de lista de tarjetas"
           >
             <i class="fas fa-th"></i
             ><span class="data-layout__button--text">Vista tarjetas</span>
           </button>
           <button
-            class="data-layout__button selected"
+            class="data-layout__button selected js-tableBtn"
             title="Mostrar los bookmarks como una tabla"
           >
             <i class="fas fa-bars"></i
@@ -124,7 +124,7 @@
           <div class="data__actions">
             <section class="js-data-actions__add data-actions__add hidden">
               <button
-                class="data-actions__button-add"
+                class="data-actions__button-add js-btnAdd"
                 title="Crear un nuevo bookmark"
               >
                 <i class="fas fa-plus data-actions__button-add--icon"></i
