@@ -34,9 +34,9 @@ const adalabers = [
 //   );
 // }
 
-const countAdalabers = () => {
+const countAdalabers = () => 
   console.log(`Hay un total de ${adalabers.length} adalabers en el listado`);
-};
+
 
 let acc = 0;
 
@@ -68,3 +68,14 @@ console.log(`La adalaber más joven tiene ${theYoungest(adalabers)} años`);
 Una función countDesigners que devuelve el número de adalabers que son diseñadoras.
 
 */
+
+function countDesigners(array){
+  let acc = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (adalabers[i].proffesion === "diseñadora") {
+      acc++;
+    } 
+  }
+}
+
+console.log(`Hay ${countDesigners(adalabers)} adalabers que son diseñadoras`);
