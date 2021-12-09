@@ -1,5 +1,6 @@
-'use strict';
+"use strict";
 
-const passwordElement = document.querySelector('.password');
+const passwordElement = document.querySelector(".password");
+const password = document.querySelector(".js_password");
 
-passwordElement.innerHTML = 'Mi contraseña es: ****';
+password.innerHTML = "****";
