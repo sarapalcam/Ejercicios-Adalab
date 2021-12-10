@@ -22,9 +22,9 @@
   <body>
     <div class="page">
       <header class="header">
-        <nav class="header__menu js-burgerBtn">
+        <nav class="header__menu">
           <a
-            class="header__menulink"
+            class="header__menulink js_link_dropdown"
             href=""
             title="Mostrar opciones de filtrado y visualización"
           >
@@ -33,19 +33,19 @@
         </nav>
         <h1 class="header__title">Ada-bookmarks</h1>
       </header>
-      <form class="js-menudropdown menudropdown collapsed">
+      <form class="menudropdown collapsed js_menu_dropdown">
         <fieldset class="menu__data-search">
           <h2 class="menu__title">Búsqueda</h2>
           <label class="data-search__epigraph" for="search_desc"
             >Buscar por descripción:
             <input
-              class="data-search__tag js-input-search"
+              class="data-search__tag"
               type="text"
               name="search_desc"
               id="search_desc"
           /></label>
           <h3 class="data-search__epigraph">Buscar por etiquetas:</h3>
-          <label class="data-search__tag" for="search_desc"
+          <label class="data-search__tag" for="search_tags_javascript"
             ><input
               type="checkbox"
               name="search_tags"
@@ -55,8 +55,8 @@
               >Buscar por etiqueta </small
             >javascipt</label
           >
-          <label class="data-search__tag" for="search_desc"
-            ><input
+          <label class="data-search__tag" for="search_tags_portfolio">
+            <input
               type="checkbox"
               name="search_tags"
               id="search_tags_portfolio"
@@ -65,22 +65,18 @@
               >Buscar por etiqueta </small
             >portfolio</label
           >
-          <label class="data-search__tag" for="search_desc"
-            ><input
-              type="checkbox"
-              name="search_tags"
-              id="search_tags_portfolio"
-            />
+          <label class="data-search__tag" for="search_tags_html">
+            <input type="checkbox" name="search_tags" id="search_tags_html" />
             <small class="data-search__hidden-label-text"
               >Buscar por etiqueta </small
             >html</label
           >
-          <label class="data-search__epigraph" for="search_desc">
+          <label class="data-search__epigraph" for="search_seen">
             Buscar bookmarks de los profes:
             <select
               class="data-search__tag"
-              name="search_desc"
-              id="search_desc"
+              name="search_seen"
+              id="search_seen"
             >
               <option disabled selected>Escoge una opción:</option>
               <option value="all">Todas</option>
@@ -92,14 +88,14 @@
         <fieldset class="menu__data-layout">
           <h2 class="menu__title">Visualización</h2>
           <button
-            class="data-layout__button js-cardsBtn"
+            class="data-layout__button js_cardview_button"
             title="Mostrar los bookmarks organizados como una de lista de tarjetas"
           >
             <i class="fas fa-th"></i
             ><span class="data-layout__button--text">Vista tarjetas</span>
           </button>
           <button
-            class="data-layout__button selected js-tableBtn"
+            class="data-layout__button selected js_table_button"
             title="Mostrar los bookmarks como una tabla"
           >
             <i class="fas fa-bars"></i
@@ -109,22 +105,20 @@
       </form>
       <main class="main">
         <h2>Lista de enlaces</h2>
-        <section class="data tableview js-type-of-view">
+        <section class="data tableview js_boarddata">
           <div class="data__header">
             <div>URL</div>
             <div>Leída</div>
             <div>Despcripción</div>
             <div>Etiquetas</div>
           </div>
-          <ul class="js-data-list data__list">
-            <li class="js-data__listitem1 data__listitem"></li>
-            <li class="js-data__listitem2 data__listitem"></li>
-            <li class="js-data__listitem3 data__listitem"></li>
+          <ul class="data__list js_list_data">
+            <li>Cargando datos...</li>
           </ul>
           <div class="data__actions">
-            <section class="js-data-actions__add data-actions__add hidden">
+            <section class="data-actions__add hidden js_section_add">
               <button
-                class="data-actions__button-add js-btnAdd"
+                class="data-actions__button-add js_button_add"
                 title="Crear un nuevo bookmark"
               >
                 <i class="fas fa-plus data-actions__button-add--icon"></i
