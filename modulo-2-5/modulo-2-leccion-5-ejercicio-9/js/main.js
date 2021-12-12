@@ -5,19 +5,62 @@ const teacher1 = listTeachers.querySelector(".js-teacher--isra");
 const teacher2 = listTeachers.querySelector(".js-teacher--tuerto");
 const teacher3 = listTeachers.querySelector(".js-teacher--nasi");
 
-function selectTeacher(event) {
-  const selectedTeacher = event.target;
+function toggleSelectedClass(event) {
+  const selectedTeacher = event.currentTarget;
   selectedTeacher.classList.toggle("teacher--selected");
-  // const legend = selectedTeacher.querySelector(".favorite");
-  // legend.innerHTML = "Añadir"
-  //   ? (legend.innerHTML = "Quitar")
-  //   : (legend.innerHTML = "Añadir");
 }
 
-listTeachers.addEventListener("click", selectTeacher);
+function toggleTextSelected(event) {
+  const textCurrentTarget = event.currentTarget.querySelector(".favorite");
+  if (event.currentTarget.classList.contains("teacher--selected")) {
+    textCurrentTarget.innerHTML = "Quitar";
+  } else {
+    textCurrentTarget.innerHTML = "Añadir";
+  }
+}
 
-// teacher1.addEventListener("click", selectTeacher);
-// teacher2.addEventListener("click", selectTeacher);
-// teacher3.addEventListener("click", selectTeacher);
+function handleClickListElement(event) {
+  toggleSelectedClass(event);
+  toggleTextSelected(event);
+}
 
-/*No sé cómo hacer para que el texto vuelva a ser Añadir*/
+teacher1.addEventListener("click", handleClickListElement);
+teacher2.addEventListener("click", handleClickListElement);
+teacher3.addEventListener("click", handleClickListElement);
+
+/*
+
+// Vamos a refactorizar el EJERCICIO 9 para mejorarlo. Tenemos que quitar ese mogollón de listeners en los lis, reemplazarlos por uno solo en la etiqueta madre (ul) y trabajar con event.target
+
+const listTeachers = document.querySelector(".js-teachers");
+const teacher1 = listTeachers.querySelector(".js-teacher--isra");
+const teacher2 = listTeachers.querySelector(".js-teacher--tuerto");
+const teacher3 = listTeachers.querySelector(".js-teacher--nasi");
+
+function toggleSelectedClass(event) {
+  event.target.parentNode.classList.toggle("teacher--selected");
+}
+
+// function toggleSelectedClass(event) {
+//   console.log(event.target);
+//   const selectedTeacher = event.target;
+//   selectedTeacher.classList.toggle("teacher--selected");
+// }
+
+/*function toggleTextSelected(event) {
+  const textCurrentTarget = event.target.querySelector(".favorite");
+  if (event.target.classList.contains("teacher--selected")) {
+    textCurrentTarget.innerHTML = "Quitar";
+  } else {
+    textCurrentTarget.innerHTML = "Añadir";
+  }
+} 
+
+function handleClickListElement(event) {
+  toggleSelectedClass(event);
+  //toggleTextSelected(event);
+}
+
+listTeachers.addEventListener("click", handleClickListElement);
+
+*/

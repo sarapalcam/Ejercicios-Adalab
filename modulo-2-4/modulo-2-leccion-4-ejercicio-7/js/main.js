@@ -19,14 +19,3 @@ if (pairOdd(number) === true) {
 } else {
   console.log(`Este número es IMPAR: ${number}`);
 }
-
-const getWaitingTime = (minutes) => `Please, wait ${minutes} minutes`;
-console.log(getWaitingTime(4));
-// devuelve "Please, wait 4 minutes"
-
-// equivale a
-const getWaitingTime = (minutes) => {
-  return `Please, wait ${minutes} minutes`;
-};
-console.log(getWaitingTime(4));
-// devuelve "Please, wait 4 minutes"
