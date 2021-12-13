@@ -70,15 +70,23 @@ function getRandom(max) {
   return Math.ceil(Math.random() * max); //Se puede cambiar math.ceil por parseInt
 }
 
+function setHappyColor() {
+  mainHTML.classList.add("main_happy");
+  mainHTML.classList.remove("main_sad");
+}
+
+function setSadColor() {
+  mainHTML.classList.remove("main_happy");
+  mainHTML.classList.add("main_sad");
+}
+
 function changeColor() {
   const randomNumber = getRandom(100);
   console.log(randomNumber);
   if (randomNumber % 2 === 0) {
-    mainHTML.classList.add("main_happy");
-    mainHTML.classList.remove("main_sad");
+    setHappyColor();
   } else {
-    mainHTML.classList.remove("main_happy");
-    mainHTML.classList.add("main_sad");
+    setSadColor();
   }
 }
 
