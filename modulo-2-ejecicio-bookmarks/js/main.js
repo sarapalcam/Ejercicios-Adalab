@@ -9,49 +9,37 @@ const listData = document.querySelector(".js_list_data");
 const buttonShowCardview = document.querySelector(".js_cardview_button");
 const buttonShowTable = document.querySelector(".js_table_button");
 
-const bmkData1 = {
-  url: "https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-2-programando-la-web/javascript/2_1_intro_a_la_programacion",
-  desc: "JS en los materiales de Adalab",
-  seen: false,
-  tag1: "",
-  tag2: "",
-};
+const bmkData = [
+  {
+    url: "https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-2-programando-la-web/javascript/2_1_intro_a_la_programacion",
+    desc: "JS en los materiales de Adalab",
+    seen: false,
+    tags: ["javascript"],
+  },
+  {
+    url: "https://thesmartcoder.dev/9-awesome-projects-you-can-build-with-vanilla-javascript/",
+    desc: "Ideas de proyectos JS",
+    seen: true,
+    tags: [],
+  },
+  {
+    url: "https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-1-html-y-css/1_1_intro_a_la_web",
+    desc: "HTML en los materiales de Adalab",
+    seen: true,
+    tags: ["html", "css"],
+  },
+];
 
-const bmkData2 = {
-  url: "https://thesmartcoder.dev/9-awesome-projects-you-can-build-with-vanilla-javascript/",
-  desc: "Ideas de proyectos JS",
-  seen: true,
-  tag1: "",
-  tag2: "",
-};
-
-const bmkData3 = {
-  url: "https://books.adalab.es/materiales-del-curso-n/-MdR6Gp68BX20m1pi0z2/modulo-1-html-y-css/1_1_intro_a_la_web",
-  desc: "HTML en los materiales de Adalab",
-  seen: true,
-  tag1: "",
-  tag2: "",
-};
-
-function renderTags(tag1, tag2) {
+function renderTags(tags) {
   let htmlTags = `<ul class="item__tags">`;
-  if (tag1 !== "" && tag2 !== "") {
-    htmlTags = ` <ul class="item__tags">
-          <li class="item__tag">${tag1}</li>
-          <li class="item__tag">${tag2}</li>
-        </ul>`;
-  } else if (tag1 !== "" && tag2 === "") {
-    htmlTags = ` <ul class="item__tags">
-          <li class="item__tag">${tag1} 1</li>
-        </ul>`;
-  } else if (tag1 === "" && tag2 === "") {
-    htmlTags = ` <p class="item__tags">No tiene</p>`;
+  for (const tag of tags) {
+    htmlTags += `<li class= "item__tag">${tag}</li>`;
   }
-  return htmlTags;
+  return (htmlTags += `</ul>`);
 }
 
 function renderBookmark(bmkData) {
-  const htmlTags = renderTags(bmkData.tag1, bmkData.tag2);
+  const htmlTags = renderTags(bmkData.tags);
   const htmlBookmark = `
     <li class="data__listitem">
       <article class="data__item">
@@ -71,9 +59,11 @@ function renderBookmark(bmkData) {
   return htmlBookmark;
 }
 
-let html = renderBookmark(bmkData1);
-html += renderBookmark(bmkData2);
-html += renderBookmark(bmkData3);
+let html = "";
+
+for (const bookmark of bmkData) {
+  html += renderBookmark(bookmark);
+}
 
 listData.innerHTML = html;
 

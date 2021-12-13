@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-.body {
+.main {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,11 +12,11 @@
   justify-content: center;
 }
 
-.body_happy {
+.main_happy {
   background-color: #ffcc00;
 }
 
-.body_sad {
+.main_sad {
   background-color: #ff9900;
 }
 

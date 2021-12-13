@@ -34,9 +34,8 @@ const adalabers = [
 //   );
 // }
 
-const countAdalabers = () => 
+const countAdalabers = () =>
   console.log(`Hay un total de ${adalabers.length} adalabers en el listado`);
-
 
 let acc = 0;
 
@@ -51,31 +50,41 @@ console.log(
   `La media de edad de las adalabers es de ${averageAge(adalabers)} años`
 );
 
+// function theYoungest(array) {
+//   let minAge = Math.min.apply(
+//     null,
+//     array.map(function (object) {
+//       return object.age;
+//     })
+//   );
+//   return minAge;
+// }
+
+/* ASÍ LO HIZO YANELIS */
+
 function theYoungest(array) {
-  let minAge = Math.min.apply(
-    null,
-    array.map(function (object) {
-      return object.age;
-    })
-  );
-  return minAge;
+  let min = array[0].age;
+  let name = array[0].name;
+  for (let index = 0; index < array.length; index++) {
+    if (min > array[index].age) {
+      min = array[index].age;
+    }
+  }
+  console.log(`La adalaber más joven tiene ${min} años, es ${name}`);
 }
 
-console.log(`La adalaber más joven tiene ${theYoungest(adalabers)} años`);
+theYoungest(adalabers);
 
-/* 
+//console.log(`La adalaber más joven tiene ${theYoungest(adalabers)} años`);
 
-Una función countDesigners que devuelve el número de adalabers que son diseñadoras.
-
-*/
-
-function countDesigners(array){
+function countDesigners(array) {
   let acc = 0;
   for (let i = 0; i < array.length; i++) {
-    if (adalabers[i].proffesion === "diseñadora") {
+    if (array[i].proffesion === "diseñadora") {
       acc++;
-    } 
+    }
   }
+  console.log(`Hay ${acc} adalabers que son diseñadoras`);
 }
 
-console.log(`Hay ${countDesigners(adalabers)} adalabers que son diseñadoras`);
+countDesigners(adalabers);
