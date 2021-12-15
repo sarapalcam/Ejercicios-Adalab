@@ -50,32 +50,32 @@ console.log(
   `La media de edad de las adalabers es de ${averageAge(adalabers)} años`
 );
 
-// function theYoungest(array) {
-//   let minAge = Math.min.apply(
-//     null,
-//     array.map(function (object) {
-//       return object.age;
-//     })
-//   );
-//   return minAge;
-// }
+function theYoungest(array) {
+  let minAge = Math.min.apply(
+    null,
+    array.map(function (object) {
+      return object.age;
+    })
+  );
+  return minAge;
+}
 
 /* ASÍ LO HIZO YANELIS */
 
-function theYoungest(array) {
-  let min = array[0].age;
-  let name = array[0].name;
-  for (let index = 0; index < array.length; index++) {
-    if (min > array[index].age) {
-      min = array[index].age;
-    }
-  }
-  console.log(`La adalaber más joven tiene ${min} años, es ${name}`);
-}
+// function theYoungest(array) {
+//   let min = array[0].age;
+//   let name = array[0].name;
+//   for (let index = 0; index < array.length; index++) {
+//     if (min > array[index].age) {
+//       min = array[index].age;
+//     }
+//   }
+//   console.log(`La adalaber más joven tiene ${min} años, es ${name}`);
+// }
 
-theYoungest(adalabers);
+// theYoungest(adalabers);
 
-//console.log(`La adalaber más joven tiene ${theYoungest(adalabers)} años`);
+console.log(`La adalaber más joven tiene ${theYoungest(adalabers)} años`);
 
 function countDesigners(array) {
   let acc = 0;

@@ -2,20 +2,21 @@
 
 const arrayOfNumbers = [];
 
-function get100Numbers(n){
-    for (let i = 1; i <= n; i++){
-        arrayOfNumbers.push(i);
-        console.log(i);
-    }
+function get100Numbers(n) {
+  for (let i = 0; i <= n; i++) {
+    arrayOfNumbers.push(i);
+    // console.log(arrayOfNumbers[i]);
+  }
+  return arrayOfNumbers;
 }
 
-// function getReversed100Numbers(n){
-//     get100Numbers(n);
-//     return arrayOfNumbers.reverse();
-// }
-
 get100Numbers(100);
-// getReversed100Numbers(100);
 
+function getReversed100Numbers(n) {
+  get100Numbers(n).reverse();
+  for (let i = 0; i < n; i++) {
+    console.log(arrayOfNumbers[i]);
+  }
+}
 
-// No me sale el ejercicio 2, ¿cómo los logueo uno a uno?
+getReversed100Numbers(100);

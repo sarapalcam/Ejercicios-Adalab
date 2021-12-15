@@ -2,30 +2,49 @@
 
 const lostNumbers = [4, 8, 15, 16, 23, 42];
 
-let pairLostNumbers = [];
+const lostEvenNum = [];
+const lostMultiples3Num = [];
 
-const getPairNumber = (n) => (n % 2 === 0 ? true : false);
+/***  ÚNICA FUNCIÓN ***/
 
-function getLostPairNumber() {
-  for (let i = 0; i < lostNumbers.length; i++) {
-    if (getPairNumber(lostNumbers[i])) {
-      const pair = lostNumbers[i];
-      pairLostNumbers[i] = pair;
+function lostConcatNumbers(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+      lostEvenNum.push(array[i]);
+    }
+    if (array[i] % 3 === 0) {
+      lostMultiples3Num.push(array[i]);
     }
   }
-  return pairLostNumbers;
+  const lostNumConcat = lostEvenNum.concat(lostMultiples3Num);
+  return lostNumConcat;
 }
 
-console.log(getLostPairNumber());
+console.log(lostConcatNumbers(lostNumbers));
 
-// Vamos a crear una función bestLostNomber que nos devuelve algunos números del array de los números de la serie Lost que tenemos arriba. La función, debe seguir estos pasos:
+/***  FUNCIONES POR SEPARADO ***/
 
-// - Crear un nuevo array que contiene solo los números pares que hay en lostNumbers. Para conseguirlo vamos a crear un nuevo array vacío y recorrer el array lostNumbers para al encontrar un número par, meterlo en el nuevo array.
+/* function getEvenNum(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+      lostEvenNum.push(array[i]);
+    }
+  }
+  return lostEvenNum;
+}
 
-// - Crear un nuevo array que contiene solo los números múltiplos de 3 que hay en lostNumbers, de una forma similar al anterior.
+function getMultiples3Num(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 3 === 0) {
+      lostMultiples3Num.push(array[i]);
+    }
+  }
+  return lostMultiples3Num;
+}
 
-// - Devolver una concatenación de los 2 arrays anteriores, es decir, que tendrá primero los números pares y luego los múltiplos de 3.
+console.log(getEvenNum(lostNumbers));
+console.log(getMultiples3Num(lostNumbers));
 
-// Para comprobar que los tenemos todos, vamos a ejecutar la función y a loguearlos (con console.log) uno a uno en la consola en orden.
+const lostNumConcat = lostEvenNum.concat(lostMultiples3Num);
 
-//NO ME SALE
+console.log(lostNumConcat); */
