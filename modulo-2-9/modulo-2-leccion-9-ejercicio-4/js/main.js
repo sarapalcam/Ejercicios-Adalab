@@ -1,22 +1,9 @@
 "use strict";
 
-/* Mostrar una frase que indique cuántas tareas hay.
-Pintar todas las tareas en pantalla.
-Tachar las ya realizadas.
-Permitir marcar una tarea como 'completa' o 'incompleta'.
-
-a) Vamos a por una tarea. Primero vamos a pintar una tarea, solo una, en una lista de HTML. A continuación vamos a preparar una clase que la modifique, de manera que si fuera una tarea completada completed: true, el texto aparezca tachado.
-
-b) Listado de tareas. ¡Seguimos con nuestras tareas! Ahora vamos a pintar en pantalla todas la tareas que tenemos en el listado, cada una de las tareas completadas debe aparecer tachada.
-
-c) Vamos a darle dinamismo. Ahora viene lo bueno: vamos a añadir la lógica necesaria para completar tareas. Para ello vamos a añadir un input de tipo checkbox al final de cada tarea que nos falte por completar. El checkbox de las tareas completadas debe aparecer marcado (checked). 
-
-
-Además, cuando el usuario marque la tarea como completada marcando el checkbox, deben suceder varias cosas: la tarea debe mostrarse como completada (tachada) debemos modificar su estado (propiedad completed) en el array tasks.
-
-d) Tareas totales. No nos podemos olvidar de los detalles. Añadamos por encima del listado de tareas una frase que diga: Tienes X tareas. Y completadas y Z por realizar. Cada vez que una tarea se marque/desmarque deberiamos actualizar esta información. */
+//Mi lista de constantes
 
 const list = document.querySelector(".js_list");
+const title = document.querySelector(".js_title");
 
 const tasks = [
   { name: "Recoger setas en el campo", completed: true },
@@ -24,36 +11,50 @@ const tasks = [
   { name: "Poner una lavadora de blancos", completed: true },
   {
     name: "Aprender cómo se realizan las peticiones al servidor en JavaScript",
-    completed: true,
+    completed: false,
   },
 ];
 
-// 1. Logueamos el número de tareas (quizás este mejor ponerlo como título)
+//Ponemos el número de tareas en el título
 
-console.log(`Tenemos un total de ${tasks.length} tareas`);
+title.innerHTML = `Tenemos un total de ${tasks.length} tareas`;
 
-// 2. Pintamos una tarea y la la marcamos como completada
+//Funciones
 
-//list.innerHTML += `<li class="completed">${tasks[0].name}</li>`;
-
-// 3. Pintamos todas las tareas tachadas y añadimos los checkbox marcados
-
-// for (const item of tasks) {
-//   if (item.completed) {
-//     list.innerHTML += `<li class="completed">${item.name}<input type="checkbox" checked/></li>`;
-//   } else {
-//     list.innerHTML += `<li>${item.name}<input type="checkbox"/></li>`;
-//   }
-// }
-
-// 4. Cuando la usuaria haga click, la tarea se tachará o destachará
-
-for (const item of tasks) {
-  list.innerHTML += `<li>${item.name}<input type="checkbox"/></li>`;
+function addListener() {
+  //Podemos llamar a nuestros <li> porque ya los hemos creado
+  const allInputs = document.querySelectorAll(".js_input");
+  for (const input of allInputs) {
+    input.addEventListener("click", handleClickTask);
+  }
 }
+
+function render() {
+  list.innerHTML = "";
+  for (let index = 0; index < tasks.length; index++) {
+    if (tasks[index].completed) {
+      list.innerHTML += `<li class="completed js_list_item"><input id=${index} class="js_input" type="checkbox" checked/>${tasks[index].name}</li>`;
+    } else {
+      list.innerHTML += `<li class="js_list_item"><input  id=${index} class="js_input" type="checkbox"/>${tasks[index].name}</li>`;
+    }
+  }
+  addListener();
+}
+
+//Funciones manejadoras
 
 function handleClickTask(event) {
-  console.log(event);
+  event.preventDefault();
+  const posTask = event.currentTarget.id;
+  if (tasks[posTask].completed) {
+    tasks[posTask].completed = false;
+  } else {
+    tasks[posTask].completed = true;
+  }
+
+  render();
 }
 
-list.addEventListener("click", handleClickTask);
+//Llamamos a la función
+
+render();
