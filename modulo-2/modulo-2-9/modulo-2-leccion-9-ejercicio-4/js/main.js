@@ -1,5 +1,7 @@
 "use strict";
 
+// d) Tareas totales. No nos podemos olvidar de los detalles. Añadamos por encima del listado de tareas una frase que diga: Tienes X tareas. Y completadas y Z por realizar. Cada vez que una tarea se marque/desmarque deberiamos actualizar esta información.
+
 //Mi lista de constantes
 
 const list = document.querySelector(".js_list");
@@ -17,7 +19,8 @@ const tasks = [
 
 //Ponemos el número de tareas en el título
 
-title.innerHTML = `Tenemos un total de ${tasks.length} tareas`;
+let completedTasks = 0;
+let unfinshedTasks = 0;
 
 //Funciones
 
@@ -41,6 +44,16 @@ function render() {
   addListener();
 }
 
+function updateCounter() {
+  completedTasks = 0;
+  for (const task of tasks) {
+    if (task.completed) {
+      completedTasks++;
+    }
+  }
+  return completedTasks;
+}
+
 //Funciones manejadoras
 
 function handleClickTask(event) {
@@ -51,10 +64,22 @@ function handleClickTask(event) {
   } else {
     tasks[posTask].completed = true;
   }
-
   render();
+  updateCounter();
 }
 
 //Llamamos a la función
 
 render();
+renderTotal();
+
+function renderTotal() {
+  updateCounter();
+  title.innerHTML = `Tienes ${
+    tasks.length
+  } tareas. ${completedTasks} completadas y ${
+    tasks.length - completedTasks
+  } por realizar`;
+}
+
+//TERMINAR EL EJERCICIO
