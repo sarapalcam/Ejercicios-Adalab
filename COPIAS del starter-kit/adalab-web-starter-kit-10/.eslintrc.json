@@ -4,11 +4,6 @@
         "es6": true,
         "node": true
     },
-    "parserOptions": {
-      "ecmaFeatures": {
-        "experimentalObjectRestSpread":true
-      }
-    },
     "extends": "eslint:recommended",
     "rules": {
         "indent": [2, 2],
@@ -16,7 +11,7 @@
         "semi": [2, "always"],
         "eqeqeq": 2,
         "strict": [2, "global"],
-        "no-debugger": 1,
+
         "no-console": 1,
         "array-callback-return": 1,
         "block-scoped-var": 1,

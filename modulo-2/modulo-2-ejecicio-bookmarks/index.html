@@ -127,7 +127,7 @@
               <form class="data__item data-actions__data">
                 <h3 class="data-actions__title">Datos del nuevo bookmark:</h3>
                 <input
-                  class="data-actions__input"
+                  class="data-actions__input js_search_input"
                   type="text"
                   name="new_dir"
                   id="new_dir"
@@ -137,14 +137,14 @@
                   ><!--Esta lección <input class="data-actions__input" type="checkbox" name="new_seen" id="new_seen">--></label
                 >
                 <input
-                  class="data-actions__input"
+                  class="data-actions__input js_search_input"
                   type="text"
                   name="new_desc"
                   id="new_desc"
                   placeholder="Descripción"
                 />
                 <input
-                  class="data-actions__input"
+                  class="data-actions__input js_search_input"
                   type="text"
                   name="new_tags"
                   id="new_tags"
@@ -152,7 +152,9 @@
                 />
                 <fieldset class="data-actions__add--buttons">
                   <button class="data-actions__button cancel">Cancelar</button>
-                  <button class="data-actions__button accept">Guardar</button>
+                  <button class="data-actions__button accept js_save_btn">
+                    Guardar
+                  </button>
                 </fieldset>
               </form>
             </section>
