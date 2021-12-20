@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autocompletado</title>
+  </head>
+  <body>
+    <form class="js_form" action="">
+      <input type="text" class="js_input" name="name" placeholder="Nombre" />
+      <input
+        type="text"
+        class="js_input"
+        name="surname"
+        placeholder="Apellidos"
+      /><input
+        type="text"
+        class="js_input"
+        name="phone"
+        placeholder="Teléfono"
+      />
+      <select class="js_select" id="users_data" name="users_data">
+        <option value="default" hidden selected>¿Quién eres?</option>
+        <option value="user0">Alicia</option>
+        <option value="user1">Olivia</option>
+        <option value="user2">Carlos</option>
+      </select>
+    </form>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
