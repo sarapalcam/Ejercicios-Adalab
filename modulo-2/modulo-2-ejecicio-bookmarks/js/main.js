@@ -45,7 +45,7 @@ function renderTags(tags) {
   return (htmlTags += `</ul>`);
 }
 
-//Función que nos recoge en una vriable los datos de los bookmars
+//Función que nos recoge en una variable los datos de los bookmars
 function renderBookmark(bmkData) {
   const htmlTags = renderTags(bmkData.tags);
   const htmlBookmark = `
@@ -145,7 +145,7 @@ const newBookmarkDataObject = {
 function addNewBmk() {
   bmkData.push(newBookmarkDataObject);
   // renderBookmark(bmkData);
-  listData.innerHTML += html;
+ // listData.innerHTML += html;
 }
 
 function getInputsSearch() {
@@ -160,7 +160,7 @@ function getInputsSearch() {
   }
   addNewBmk();
 }
-//NO FUNCIONA
+//NO FUNCIONA: REVISAR SI ESTOY METIENDO BIEN LOS DATOS EN EL OBJETO Y SI NO PEDIR TUTORÍA
 
 function saveNewBookmark(event) {
   event.preventDefault();
@@ -173,3 +173,5 @@ buttonShowCardview.addEventListener("click", handleClickShowCardview);
 buttonShowTable.addEventListener("click", handleClickShowTable);
 buttonAdd.addEventListener("click", showAddForm);
 saveBtn.addEventListener("click", saveNewBookmark);
+
+

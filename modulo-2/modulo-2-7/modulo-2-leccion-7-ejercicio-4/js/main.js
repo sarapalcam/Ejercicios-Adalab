@@ -8,3 +8,6 @@ let threeYears = calcYear * 3;
 for (let i = initDate; i < endDate; i = i + threeYears) {
   console.log(`La próxima Luna del Cazador será el: ${i}`);
 }
+
+//Básicamente es decir que es el 15 de octubre cada 3 años, repetirlo de esta forma, no hay que tener el cuenta el día
+
