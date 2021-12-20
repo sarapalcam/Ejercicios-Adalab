@@ -3,27 +3,25 @@
 const input = document.querySelector(".js_input");
 const btnSearch = document.querySelector(".js_btn");
 const resultList = document.querySelector(".js_list");
+
 function getInputValue() {
-  const inputValue = input.value;
-  const inputValueLC = inputValue.toLowerCase();
-  const firstCharCapitalidez = inputValueLC.charAt(0).toUpperCase();
-  const inputCapitalized = firstCharCapitalidez + inputValue.slice(1);
-  return inputCapitalized;
+  const inputValue = input.value; 
+  return inputValue;
 }
+
 function getPeopleList() {
   resultList.innerHTML = "";
   const inputValue = getInputValue();
-  for (let peopleNumber = 1; peopleNumber <= 88; peopleNumber++) {
-    fetch(`https://swapi.py4e.com/api/people/${peopleNumber}`) //Buscar otro modo, estoy iendo 88 peticiones al servidor
+    fetch(`https://swapi.py4e.com/api/people/?search=${inputValue}`) 
       .then((response) => response.json())
-      .then((data) => {
-        const dataName = data.name;
-        if (dataName.includes(inputValue)) {
-          resultList.innerHTML += `<li>${dataName}: ${data.gender}</li>`;
-        }
+      .then((data) => {   
+        console.log(data);
+        const gender = data.results[0].gender;
+        const name = data.results[0].name;
+        resultList.innerHTML += `<li>${name}: ${gender}</li>`
       });
   }
-}
+
 function handleClickSearch(ev) {
   ev.preventDefault();
   getInputValue();
@@ -36,48 +34,7 @@ function handleEnterSearch(ev) {
     getPeopleList();
   }
 }
+
 btnSearch.addEventListener("click", handleClickSearch);
 input.addEventListener("keyup", handleEnterSearch);
 
-// const input = document.querySelector(".js_input");
-// const btnSearch = document.querySelector(".js_btn");
-// const resultList = document.querySelector(".js_list");
-
-// function getInputValue() {
-//   const inputValue = input.value;
-//   const inputValueLC = inputValue.toLowerCase();
-//   const firstCharCapitalidez = inputValueLC.charAt(0).toUpperCase();
-//   const inputCapitalized = firstCharCapitalidez + inputValue.slice(1);
-//   return inputCapitalized;
-// }
-
-// function getPeopleList() {
-//   resultList.innerHTML = "";
-//   const inputValue = getInputValue();
-
-//   fetch(`https://swapi.py4e.com/api/people/`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const dataResults = data.results;
-//       if (dataResults.name.includes(inputValue)) {
-//         resultList.innerHTML += `<li>${dataResults.name}: ${dataResults.gender}</li>`;
-//       }
-//     });
-// }
-
-// function handleClickSearch(ev) {
-//   ev.preventDefault();
-//   getInputValue();
-//   getPeopleList();
-// }
-
-// function handleEnterSearch(ev) {
-//   ev.preventDefault();
-//   if (ev.key === "Enter") {
-//     getInputValue();
-//     getPeopleList();
-//   }
-// }
-
-// btnSearch.addEventListener("click", handleClickSearch);
-// input.addEventListener("keyup", handleEnterSearch);
