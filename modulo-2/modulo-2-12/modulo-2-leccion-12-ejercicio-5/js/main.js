@@ -7,20 +7,24 @@ const textTeam = document.getElementById("equipo");
 const textWho = document.getElementById("quienes-somos");
 const textContact = document.getElementById("contacto");
 
-const teamPosition = textTeam.getBoundingClientRect();
-const whoPosition = textWho.getBoundingClientRect();
-const contactPosition = textContact.getBoundingClientRect();
+// teamPosition.height = "-100px";
 
 function handleClickScrollTeam() {
-  window.scrollTo(teamPosition);
+  const teamPosition = textTeam.getBoundingClientRect();
+  console.log(teamPosition);
+  window.scrollTo(0, window.scrollY + teamPosition.top - 100);
 }
 
 function handleClickScrollWho() {
-  window.scrollTo(whoPosition);
+  const whoPosition = textWho.getBoundingClientRect();
+  console.log(whoPosition);
+  window.scrollTo(0, window.scrollY + whoPosition.top - 100);
 }
 
 function handleClickScrollContact() {
-  window.scrollTo(contactPosition);
+  const contactPosition = textContact.getBoundingClientRect();
+  console.log(contactPosition);
+  window.scrollTo(0, window.scrollY + contactPosition.top - 100);
 }
 
 function preventLink(event) {
@@ -35,5 +39,3 @@ linkContact.addEventListener("click", preventLink);
 linkTeam.addEventListener("click", handleClickScrollTeam);
 linkWho.addEventListener("click", handleClickScrollWho);
 linkContact.addEventListener("click", handleClickScrollContact);
-
-//Tengo que intentar hacer funciones que unifiquen todo y restar el alto del header

@@ -20,3 +20,5 @@ function handleClickForm(ev) {
 }
 
 form.addEventListener("change", handleClickForm);
+
+//Debería añadir las imágenes desde JS

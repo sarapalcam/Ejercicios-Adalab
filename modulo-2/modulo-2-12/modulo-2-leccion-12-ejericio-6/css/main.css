@@ -12,3 +12,27 @@
   color: white;
   padding: 40px;
 }
+
+.blanco {
+  color: white;
+}
+
+.azul {
+  color: blue;
+}
+
+.rojo {
+  color: red;
+}
+
+.verde {
+  color: green;
+}
+
+.amarillo {
+  color: yellow;
+}
+
+.rosa {
+  color: rgb(231, 114, 183);
+}

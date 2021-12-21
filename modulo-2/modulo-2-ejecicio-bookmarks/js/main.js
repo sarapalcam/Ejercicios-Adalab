@@ -10,6 +10,7 @@ const listData = document.querySelector(".js_list_data");
 const buttonShowCardview = document.querySelector(".js_cardview_button");
 const buttonShowTable = document.querySelector(".js_table_button");
 const saveBtn = document.querySelector(".js_save_btn");
+const searchInputs = document.querySelectorAll(".js_search_input");
 
 //Variable en la que meteremos toda la información de los bookmarks al pintarla
 let html = "";
@@ -36,7 +37,14 @@ const bmkData = [
   },
 ];
 
-//Función que nos pinta las etiquetas de los bookmars
+//Array vacío en el que crearemos nuevos bookmarks a partir del formulario
+const newBmk = {
+  url: "",
+  desc: "",
+  tags: [],
+};
+
+//Función que nos pinta las etiquetas de los bookmarks
 function renderTags(tags) {
   let htmlTags = `<ul class="item__tags">`;
   for (const tag of tags) {
@@ -103,6 +111,32 @@ function toggleDropDownMenu() {
   }
 }
 
+function addNewBmk() {
+  bmkData.push(newBmk);
+  renderBookmark(newBmk);
+  listData.innerHTML += renderBookmark(newBmk);
+}
+
+function getInputsSearch() {
+  for (const input of searchInputs) {
+    if (input.name === "new_dir") {
+      newBmk.url = input.value;
+    } else if (input.name === "new_desc") {
+      newBmk.desc = input.value;
+    } else if (input.name === "new_tags") {
+      newBmk.tags.push(input.value); //Tengo que conseguir poder poner más de un tag en los nuevos bookmarks
+    }
+  }
+  addNewBmk();
+}
+
+function resetForm() {
+  for (const input of searchInputs) {
+    input.value = "";
+    sectionAdd.classList.add("hidden");
+  }
+}
+
 //FUNCIONES MANEJADORAS DE EVENTOS
 
 //Función que nos muestra el formulario para crear un nuevo bookmark
@@ -129,42 +163,10 @@ function handleClickShowTable(event) {
   buttonShowTable.classList.add("selected");
 }
 
-// Esta función obtiene los valores de cada uno de los inputs, crea un nuevo objeto newBookmarkDataObject que agregaremos al listado de enlaces con la siguiente línea de código:
-
-// bmkData.push(newBookmarkDataObject);
-// Recuerda limpiar los valores de los inputs y volver a ocultar la sección del formulario.
-
-const searchInputs = document.querySelectorAll(".js_search_input");
-
-const newBookmarkDataObject = {
-  url: "",
-  desc: "",
-  tags: [],
-};
-
-function addNewBmk() {
-  bmkData.push(newBookmarkDataObject);
-  // renderBookmark(bmkData);
- // listData.innerHTML += html;
-}
-
-function getInputsSearch() {
-  for (const input of searchInputs) {
-    if (input.name === "new_dir") {
-      newBookmarkDataObject.url = input.value;
-    } else if (input.name === "new_desc") {
-      newBookmarkDataObject.desc = input.value;
-    } else if (input.name === "new_tags") {
-      newBookmarkDataObject.tags.push(input.value);
-    }
-  }
-  addNewBmk();
-}
-//NO FUNCIONA: REVISAR SI ESTOY METIENDO BIEN LOS DATOS EN EL OBJETO Y SI NO PEDIR TUTORÍA
-
 function saveNewBookmark(event) {
   event.preventDefault();
   getInputsSearch();
+  resetForm();
 }
 
 //Eventos
@@ -173,5 +175,3 @@ buttonShowCardview.addEventListener("click", handleClickShowCardview);
 buttonShowTable.addEventListener("click", handleClickShowTable);
 buttonAdd.addEventListener("click", showAddForm);
 saveBtn.addEventListener("click", saveNewBookmark);
-
-
