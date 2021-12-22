@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+height: 100vh;
+}
+
+.alert{
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(238, 178, 98);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 10px  rgba(0 , 0, 0, .2);
+    padding: 10px;
+}
+
+.alert_text{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+
+.hidden{
+    display: none;
+}
