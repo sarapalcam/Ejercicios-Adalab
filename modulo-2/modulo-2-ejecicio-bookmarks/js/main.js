@@ -11,6 +11,7 @@ const buttonShowCardview = document.querySelector(".js_cardview_button");
 const buttonShowTable = document.querySelector(".js_table_button");
 const saveBtn = document.querySelector(".js_save_btn");
 const searchInputs = document.querySelectorAll(".js_search_input");
+const cancleBtn = document.querySelector(".js_cancel_btn");
 
 //Variable en la que meteremos toda la información de los bookmarks al pintarla
 let html = "";
@@ -117,6 +118,7 @@ function addNewBmk() {
   listData.innerHTML += renderBookmark(newBmk);
 }
 
+//Hacerlo con event.curretTatger(necesito evento keypu en los)
 function getInputsSearch() {
   for (const input of searchInputs) {
     if (input.name === "new_dir") {
@@ -129,6 +131,12 @@ function getInputsSearch() {
   }
   addNewBmk();
 }
+
+//Tengo que conseguir poder poner más de un tag en los nuevos bookmarks
+// remove white spaces
+//tags = tags.replace(/\s+/g, '');
+// separate in tags
+//tags = tags.split(',');
 
 function resetForm() {
   for (const input of searchInputs) {
@@ -175,3 +183,4 @@ buttonShowCardview.addEventListener("click", handleClickShowCardview);
 buttonShowTable.addEventListener("click", handleClickShowTable);
 buttonAdd.addEventListener("click", showAddForm);
 saveBtn.addEventListener("click", saveNewBookmark);
+cancleBtn.addEventListener("click", resetForm);
