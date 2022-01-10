@@ -1,0 +1,1 @@
+# En cada starter kit copiado tengo que eliminar el archivo `scr/index.css` y hacer un `npm install node-sass` para trabajar con sass
