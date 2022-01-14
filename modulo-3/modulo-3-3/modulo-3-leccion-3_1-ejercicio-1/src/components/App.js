@@ -1,167 +1,204 @@
-import '../styles/index.scss';
-import '../styles//App.scss';
-import { useState } from 'react';
+//EL MISMO EJERCICIO CON MAP, MÁS ABAJO ESTÁ EL OTRO MÉTODO
+import "../styles/index.scss";
+import "../styles//App.scss";
+import { useState } from "react";
 
-// Cada dato tiene que ir en variables estado, son datos y queremos guardarlos
+// Cada dato tiene que ir en variables estado, son datos y queremos guardarlos//// Siempre que tengamos checkbox vamos a usar un arrray
 
 const App = () => {
 
-  const [checkboxStatus, setCheckboxStatus] = useState({
-    macarrones: false,
-    patatas: false,
-    nueces: false,
-    huevos: false,
-    cebolla: false,
-    cerveza: false
-  });
+  const [ingredientsToDisplay, setIngredientsToDisplay] = useState([
+    'Macarrones', 
+    'Patatas', 
+    'Nueces', 
+    'Huevos', 
+    'Cebolla', 
+    'Cerveza']);
 
-  const [message, setMessage] = useState('');
+  const [ingredientsList, setIngredientsList] = useState([]);
 
   const handleChangeCheckbox = ev => {
-    setCheckboxStatus(ev.currentTarget.checked);
+    const checked = ev.currentTarget.checked;
+    const value = ev.currentTarget.value;
+    if (checked){
+      const selectedIngredients = [...ingredientsList, value];
+      setIngredientsList(selectedIngredients)
+    } else {
+      const notRemovedIngredients = ingredientsList.filter(eachIngredient => eachIngredient !== value);
+      setIngredientsList(notRemovedIngredients)
+    }
+  };
+
+  const showMessage = () => {
+    if (
+    ingredientsList.includes('Cebolla') &&
+    ingredientsList.includes('Huevos') && 
+    ingredientsList.includes('Patatas') && 
+    !ingredientsList.includes('Macarrones')  && 
+    !ingredientsList.includes('Nueces')  && 
+    !ingredientsList.includes('Cerveza')
+    ){
+      return "Eres una persona concebollista"
+    } else {
+      return "Eres un robot sin paladar"
+    }
   }
-  
+
+  const handleClickReset = (ev) => {
+    ev.preventDefault();
+    setIngredientsList([]);
+  };
+
+
+ const htmlCheckboxes = ingredientsToDisplay.map( (eachIngredient, index) => {
+  return <label key={index} htmlFor={eachIngredient}>
+  <input
+    type="checkbox"
+    id={eachIngredient}
+    name="ingredient"
+    value={eachIngredient}
+    checked={ingredientsList.includes(eachIngredient)}
+    onChange={handleChangeCheckbox}
+  />
+  {eachIngredient}
+</label>
+});
+
   return (
     <div>
-      <h1>Selecciona los ingredientes de la tortilla de patatas</h1>
+      <h1 className="title">
+        Selecciona los ingredientes de la tortilla de patatas
+      </h1>
       <form className="form" action="">
-        <label htmlFor="macarrones">
-          <input type="checkbox" id="macarrones" onChange={handleChangeCheckbox}/>
-          Macarrones
-        </label>
-        <label htmlFor="patatas">
-          <input type="checkbox" id="patatas" onChange={handleChangeCheckbox} />
-          Patatas
-        </label>
-        <label htmlFor="nueces">
-          <input type="checkbox" id="nueces" onChange={handleChangeCheckbox} />
-          Nueces
-        </label>
-        <label htmlFor="huevos">
-          <input type="checkbox" id="huevos" onChange={handleChangeCheckbox} />
-          Huevos
-        </label>
-        <label htmlFor="cebolla">
-          <input type="checkbox" id="cebolla" onChange={handleChangeCheckbox} />
-          Cebolla
-        </label>
-        <label htmlFor="cerveza">
-          <input type="checkbox" id="cerveza" onChange={handleChangeCheckbox} />
-          Cerveza
-        </label>
+      {htmlCheckboxes}
       </form>
-      <p>{message}</p>
+      <p>{showMessage()}</p>
+      <button onClick={handleClickReset}>Reset</button>
     </div>
   );
 };
 
 export default App;
 
-// COMO LO TIENE MARA 
-// import { useState } from 'react';
+// import "../styles/index.scss";
+// import "../styles//App.scss";
+// import { useState } from "react";
 
-// function App() {
-//   /* Let's do magic! 🦄🦄🦄 */
+// // Cada dato tiene que ir en variables estado, son datos y queremos guardarlos//// Siempre que tengamos checkbox vamos a usar un arrray
 
-//   const getTitle = (text) => <h1>{text}</h1>;
+// const App = () => {
 
-//   const [macarrones, setMacarrones] = useState(false);
-//   const [patatas, setPatatas] = useState(false);
-//   const [nueces, setNueces] = useState(false);
-//   const [huevos, setHuevos] = useState(false);
-//   const [cebolla, setCebolla] = useState(false);
-//   const [cerveza, setCerveza] = useState(false);
+//   const [ingredientsList, setIngredientsList] = useState([]);
 
-//   const handleCheckbox = (event) => {
-//     const id = event.currentTarget.id;
-//     if (id === 'macarrones') {
-//       setMacarrones(event.currentTarget.checked);
-//     } else if (id === 'patatas') {
-//       setPatatas(event.currentTarget.checked);
-//     } else if (id === 'nueces') {
-//       setNueces(event.currentTarget.checked);
-//     } else if (id === 'huevos') {
-//       setHuevos(event.currentTarget.checked);
-//     } else if (id === 'cebolla') {
-//       setCebolla(event.currentTarget.checked);
+//   const handleChangeCheckbox = ev => {
+//     const checked = ev.currentTarget.checked;
+//     const value = ev.currentTarget.value;
+//     if (checked){
+//       const selectedIngredients = [...ingredientsList, value];
+//       setIngredientsList(selectedIngredients)
 //     } else {
-//       setCerveza(event.currentTarget.checked);
+//       const notRemovedIngredients = ingredientsList.filter(eachIngredient => eachIngredient !== value);
+//       setIngredientsList(notRemovedIngredients)
 //     }
 //   };
 
-//   const getMessage = () => {
-//     let message = '';
-//     if (!macarrones && patatas && !nueces && huevos && cebolla && !cerveza) {
-//       message = 'Eres una persona concebollista';
-//     } else if (
-//       !(macarrones || patatas || nueces || huevos || cebolla || cerveza)
-//     ) {
-//       message = '';
+//   const showMessage = () => {
+//     if (
+//     ingredientsList.includes('cebolla') &&
+//     ingredientsList.includes('huevos') && 
+//     ingredientsList.includes('patatas') && 
+//     !ingredientsList.includes('macarrones')  && 
+//     !ingredientsList.includes('nueces')  && 
+//     !ingredientsList.includes('cerveza')
+//     ){
+//       return "Eres una persona concebollista"
 //     } else {
-//       message = 'Eres un robot sin paladar';
+//       return "Eres un robot sin paladar"
 //     }
-//     return message;
+//   }
+
+//   const handleClickReset = (ev) => {
+//     ev.preventDefault();
+//     setIngredientsList([]);
 //   };
 
 //   return (
-//     // HTML ✨
-
-//     <div className="app">
-//       {getTitle('Eres un bot o una persona')}
-
-//       <h2>Selecciona los ingredientes de la tortilla de patatas</h2>
-
-//       <input
-//         type="checkbox"
-//         name="macarrones"
-//         id="macarrones"
-//         onChange={handleCheckbox}
-//       />
-//       <label htmlFor="macarrones">Macarrones</label>
-
-//       <input
-//         type="checkbox"
-//         name="patatas"
-//         id="patatas"
-//         onChange={handleCheckbox}
-//       />
-//       <label htmlFor="patatas">Patatas</label>
-
-//       <input
-//         type="checkbox"
-//         name="nueces"
-//         id="nueces"
-//         onChange={handleCheckbox}
-//       />
-//       <label htmlFor="nueces">Nueces</label>
-
-//       <input
-//         type="checkbox"
-//         name="huevos"
-//         id="huevos"
-//         onChange={handleCheckbox}
-//       />
-//       <label htmlFor="huevos">Huevos</label>
-
-//       <input
-//         type="checkbox"
-//         name="cebolla"
-//         id="cebolla"
-//         onChange={handleCheckbox}
-//       />
-//       <label htmlFor="cebolla">Cebolla</label>
-
-//       <input
-//         type="checkbox"
-//         name="cerveza"
-//         id="cerveza"
-//         onChange={handleCheckbox}
-//       />
-//       <label htmlFor="cerveza">Cerveza</label>
-
-//       <p>{getMessage()}</p>
+//     <div>
+//       <h1 className="title">
+//         Selecciona los ingredientes de la tortilla de patatas
+//       </h1>
+//       <form className="form" action="">
+//         <label htmlFor="macarrones">
+//           <input
+//             type="checkbox"
+//             id="macarrones"
+//             name="ingredient"
+//             value="macarrones"
+//             checked={ingredientsList.includes('macarrones')}
+//             onChange={handleChangeCheckbox}
+//           />
+//           Macarrones
+//         </label>
+//         <label htmlFor="patatas">
+//           <input
+//             type="checkbox"
+//             id="patatas"
+//             name="ingredient"
+//             value="patatas"
+//             checked={ingredientsList.includes('patatas')}
+//             onChange={handleChangeCheckbox}
+//           />
+//           Patatas
+//         </label>
+//         <label htmlFor="nueces">
+//           <input
+//             type="checkbox"
+//             id="nueces"
+//             name="ingredient"
+//             value="nueces"
+//             checked={ingredientsList.includes('nueces')}
+//             onChange={handleChangeCheckbox}
+//           />
+//           Nueces
+//         </label>
+//         <label htmlFor="huevos">
+//           <input
+//             type="checkbox"
+//             id="huevos"
+//             name="ingredient"
+//             value="huevos"
+//             checked={ingredientsList.includes('huevos')}
+//             onChange={handleChangeCheckbox}
+//           />
+//           Huevos
+//         </label>
+//         <label htmlFor="cebolla">
+//           <input
+//             type="checkbox"
+//             id="cebolla"
+//             name="ingredient"
+//             value="cebolla"
+//             checked={ingredientsList.includes('cebolla')}
+//             onChange={handleChangeCheckbox}
+//           />
+//           Cebolla
+//         </label>
+//         <label htmlFor="cerveza">
+//           <input
+//             type="checkbox"
+//             id="cerveza"
+//             name="ingredient"
+//             value="cerveza"
+//             checked={ingredientsList.includes('cerveza')}
+//             onChange={handleChangeCheckbox}
+//           />
+//           Cerveza
+//         </label>
+//       </form>
+//       <p>{showMessage()}</p>
+//       <button onClick={handleClickReset}>Reset</button>
 //     </div>
 //   );
-// }
+// };
 
 // export default App;
