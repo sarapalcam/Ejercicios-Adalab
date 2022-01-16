@@ -6,25 +6,31 @@ import { useState, useEffect } from 'react';
 // No consigo que al filtar por el contenido de task pueda tachar o destachar cada elemento de la lista. Volver a intentarlo más adelante
 
 function App() {
-
-  const [tasks, setTasks] = useState([
+  
+  const [tasks, setTasks] = useState(localStorage.get('tasks_list', [] ||
+    [
     { task: 'Comprar harina, jamón y pan rallado', 
-      completed: true },
+      completed: false },
     { task: 'Hacer croquetas ricas', 
-      completed: true },
+      completed: false },
     { task: 'Ir a la puerta de un gimnasio', 
       completed: false },
     { task: 'Comerme las croquetas mirando a la gente que entra en el gimnasio', 
       completed: false 
     }
-  ]);
+  ]));
 
   const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    localStorage.set('tasks_list', [...tasks]);
+  });
 
   const handleClickCompleted = (ev) => {
     const selectedTask = ev.currentTarget.id;
     tasks[selectedTask].completed = !tasks[selectedTask].completed;
     setTasks([...tasks])
+
   }
 
   const handleChangeInput = (ev) => {
@@ -33,6 +39,17 @@ function App() {
 
   const handleSubmitForm = ev => {
     ev.preventDefault();
+  }
+
+  //NO ME SALE EL ELIMINAR NI EL REASIGNAR ÍNDICES AL ARRAY QUE QUEDA
+  const handleClickDelete = (ev) => {
+    const selectedTaskId = ev.currentTarget.id;
+    console.log(selectedTaskId);
+    const findIndex = tasks[selectedTaskId];
+    console.log(findIndex);
+    const newTasks = tasks.filter(eachTask => eachTask !== findIndex);
+    // console.log(newTasks);
+    setTasks(newTasks);
   }
 
   const completedTasks = () => {
@@ -51,10 +68,9 @@ function App() {
       tasks.filter(item => {
         return item.task.toLowerCase().includes(inputValue.toLowerCase());
       })
-      // Puede que me falte un filter con los completed para hacer esto, incluso quizás deba crear un nuevo estado
       .map(
         (item, index) => {
-            return <li key={index} id={index} className={item.completed ? 'completed' : null} onClick={handleClickCompleted}>{item.task}</li>        
+            return <li key={index} id={index} className={item.completed ? 'completed' : null} onClick={handleClickCompleted}><i className="fas fa-trash-alt" id={index} onClick={handleClickDelete}></i>{item.task}</li>        
         })
       
       )
@@ -72,6 +88,6 @@ function App() {
       <p>Tareas pendientes: {uncompletedTasks()}</p>
     </div>
   );
-}
+};
 
 export default App;
