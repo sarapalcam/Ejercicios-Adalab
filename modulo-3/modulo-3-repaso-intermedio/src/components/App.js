@@ -59,8 +59,10 @@ function App() {
   }
 
   const renderContactList = () => {
-    const filteredContacts = contacts.filter(eachContact => eachContact.name.toLowerCase().includes(inputValue.toLowerCase()));
-    const renderContacts = filteredContacts.map((eachContact, index) => {
+    return contacts.filter(eachContact => eachContact.name.toLowerCase().includes(inputValue.toLowerCase()) ||
+    eachContact.lastname.toLowerCase().includes(inputValue.toLowerCase()) ||
+    eachContact.email.toLowerCase().includes(inputValue.toLowerCase()))
+    .map((eachContact, index) => {
       return <li key={index} className="contact__item">
       <p className="contact__name">
         <label className="contact__label">Nombre:</label>{`${eachContact.name} ${eachContact.lastname}`}
@@ -79,7 +81,6 @@ function App() {
       </p>
     </li>
     } )
-    return renderContacts;
   }
 
   return (

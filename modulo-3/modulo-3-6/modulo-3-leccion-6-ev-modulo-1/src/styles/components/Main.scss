@@ -1,0 +1,17 @@
+  .main {
+    height: 100vh;
+    background-color: var(--brand-color);
+    &-title{
+      word-spacing: 100vw;
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      text-transform: capitalize;
+    }
+  }
+   
