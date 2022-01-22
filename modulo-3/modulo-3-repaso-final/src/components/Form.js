@@ -3,14 +3,15 @@ import GenderForm from './GenderForm';
 
 const Form = (props) => {
   return (
-    <>
-      <fieldset>
-        <CityForm city={props.city}/>
+    <section className="form">
+     <fieldset>
+        <GenderForm selectGender={props.selectGender} gender={props.gender}/>
       </fieldset>
       <fieldset>
-        <GenderForm changeGender={props.changeGender} gender={props.gender}/>
+        <CityForm everyCity={props.everyCity} selectedCities={props.selectedCities} selectCity={props.selectCity}/>
       </fieldset>
-    </>
+     
+    </section>
   );
 };
 
