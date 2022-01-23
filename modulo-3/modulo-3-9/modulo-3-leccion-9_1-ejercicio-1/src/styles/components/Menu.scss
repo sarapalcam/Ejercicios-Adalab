@@ -1,0 +1,25 @@
+.menu {
+    list-style: none;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: space-between;
+    &-item{
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #4a4a4a;
+      &-blog{
+        padding-right: 10px;
+      }
+      &-contact{
+        padding-left: 10px;
+      }
+    }
+  }
+
+  @media all and (min-width: 768px) {.menu {
+    margin-bottom: 0;
+    &-title{
+      font-size: 40px;
+    }
+  }
+}
