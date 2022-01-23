@@ -1,7 +1,11 @@
+import '../styles/components/Header.scss';
+
 const Header = (props) => {
 
   return (
-      <h1>{props.text}</h1>
+      <header className="header">
+        <h1>{props.text}</h1>
+      </header>
     );
 }
 

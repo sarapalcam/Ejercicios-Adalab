@@ -1,3 +1,4 @@
+import '../styles/components/Form.scss';
 import CityForm from './CityForm';
 import GenderForm from './GenderForm';
 

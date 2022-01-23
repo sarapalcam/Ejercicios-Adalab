@@ -1,3 +1,6 @@
+import '../styles/components/PeopleList.scss';
+import { Link } from 'react-router-dom';
+
 const PeopleListItem = (props) => {
   return props.people
   .filter((eachPeople) =>
@@ -20,18 +23,20 @@ const PeopleListItem = (props) => {
     .map((eachPeople) => {
       return (
         <li key={eachPeople.id} className="list__item">
-          <article className="people">
-            <img
-              className="people___img"
-              src={eachPeople.picture}
-              alt={`Imagen de perfil de ${eachPeople.name}`}
-            />
-            <div className="people__data">
-              <p className="people__data--name">{`${eachPeople.name.title} ${eachPeople.name.first} ${eachPeople.name.last}`}</p>
-              <p>{eachPeople.city}</p>
-              <p>{`${eachPeople.age} años`}</p>
-            </div>
-          </article>
+          <Link to={`/people/${eachPeople.id}`} peopledetail={props.peopledetail} people={props.people} >
+            <article className="people">
+              <img
+                className="people___img"
+                src={eachPeople.picture}
+                alt={`Imagen de perfil de ${eachPeople.name}`}
+              />
+              <div className="people__data">
+                <p className="people__data--name">{`${eachPeople.name.title} ${eachPeople.name.first} ${eachPeople.name.last}`}</p>
+                <p>{eachPeople.city}</p>
+                <p>{`${eachPeople.age} años`}</p>
+              </div>
+            </article>
+          </Link>
         </li>
       );
     });

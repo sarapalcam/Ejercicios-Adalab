@@ -1,10 +1,12 @@
 import '../styles/index.scss';
-import '../styles//App.scss';
+import '../styles/App.scss';
 import { useEffect, useState } from 'react';
 import callToApi from '../services/fetch';
 import Header from './Header';
 import Form from './Form';
 import PeopleList from './PeopleList';
+import PeopleDetails from './PeopleDetails';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -35,13 +37,15 @@ function App() {
   }, []);
 
   const selectCity = (checked, id) => {
-    const findCity = selectedCities.find(eachCity => eachCity === id);
+    const findCity = selectedCities.find((eachCity) => eachCity === id);
     if (checked) {
-      setSelectedCities([...selectedCities, id])
+      setSelectedCities([...selectedCities, id]);
     } else {
-      setSelectedCities(selectedCities.filter(eachCity => eachCity !== findCity))
+      setSelectedCities(
+        selectedCities.filter((eachCity) => eachCity !== findCity)
+      );
     }
-  }
+  };
 
   const selectGender = (value) => {
     if (value === 'female') {
@@ -53,14 +57,43 @@ function App() {
     }
   };
 
+  const routeData = useRouteMatch('/people/:peopleId');
+  const peopledetail = routeData !== null ? routeData.params.peopleId : '';
   
+  const getPeopleRoute = () => {
+    if (peopledetail) {
+      return peopledetail
+    } else {
+      return {}
+    }
+  }
+
+  getPeopleRoute();
 
   return (
     <div className="App">
       <Header text="Linkedin"></Header>
       <main className="main">
-        <Form everyCity={everyCity} selectedCities={selectedCities} selectCity={selectCity} selectGender={selectGender} gender={gender}/>
-        <PeopleList people={people} everyCity={everyCity} selectedCities={selectedCities} gender={gender}></PeopleList>
+        <Form
+          everyCity={everyCity}
+          selectedCities={selectedCities}
+          selectCity={selectCity}
+          selectGender={selectGender}
+          gender={gender}
+        />
+        <Switch>
+          <Route exact path="/">
+            <PeopleList
+              people={people}
+              everyCity={everyCity}
+              selectedCities={selectedCities}
+              gender={gender}
+            ></PeopleList>
+          </Route>
+          <Route path="/people/:peopleId">
+            <PeopleDetails peopledetail={peopledetail} people={people} />
+          </Route>
+        </Switch>
       </main>
     </div>
   );
