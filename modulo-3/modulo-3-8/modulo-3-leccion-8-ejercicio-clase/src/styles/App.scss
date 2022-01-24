@@ -1,0 +1,12 @@
+* {
+    background-color: rgb(41, 41, 41);
+    color: rgb(255, 255, 255);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style: none;
+}
+
+.menu__list {
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+}

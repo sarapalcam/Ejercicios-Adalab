@@ -1,0 +1,30 @@
+@import './core/variables';
+
+.darkmode .cards {
+  flex-direction: column;
+  margin-left: 50px;
+
+  & .card {
+    max-width: calc( 100% - 100px );
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+  & .card:not(:first-child) {
+    border-top: none;
+  }
+  & .card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+  & .card__link {
+    align-self: end;
+    margin: 0.3em 2em;
+  }
+}
+
+.darkmode .cards .card {
+  background-color: var(--background);
+}

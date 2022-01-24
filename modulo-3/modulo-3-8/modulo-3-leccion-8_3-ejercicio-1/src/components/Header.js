@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Router } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -29,6 +29,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <Router exact path="/settings">
+        <p>Zona no apta para manzanas</p>
+      </Router>
     </header>
   );
 };
