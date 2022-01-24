@@ -1,17 +1,36 @@
 import '../styles/components/Form.scss';
 import CityForm from './CityForm';
 import GenderForm from './GenderForm';
+import NameForm from './NameForm';
 
-const Form = (props) => {
+const Form = ({
+  peopleName,
+  changePeopleName,
+  selectGender,
+  gender,
+  everyCity,
+  selectedCities,
+  selectCity,
+}) => {
   return (
     <section className="form">
-     <fieldset>
-        <GenderForm selectGender={props.selectGender} gender={props.gender}/>
+      <fieldset className="form__name">
+        <NameForm
+          peopleName={peopleName}
+          changePeopleName={changePeopleName}
+          labelText="Filtrar por nombre:"
+        />
       </fieldset>
-      <fieldset>
-        <CityForm everyCity={props.everyCity} selectedCities={props.selectedCities} selectCity={props.selectCity}/>
+      <fieldset className="form__gender">
+        <GenderForm selectGender={selectGender} gender={gender} />
       </fieldset>
-     
+      <fieldset className="form__city">
+        <CityForm
+          everyCity={everyCity}
+          selectedCities={selectedCities}
+          selectCity={selectCity}
+        />
+      </fieldset>
     </section>
   );
 };

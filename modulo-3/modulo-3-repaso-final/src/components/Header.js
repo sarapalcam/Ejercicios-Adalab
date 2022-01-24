@@ -1,10 +1,10 @@
 import '../styles/components/Header.scss';
 
-const Header = (props) => {
+const Header = ({text}) => {
 
   return (
       <header className="header">
-        <h1>{props.text}</h1>
+        <h1>{text}</h1>
       </header>
     );
 }

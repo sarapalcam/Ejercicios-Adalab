@@ -13,13 +13,15 @@ function App() {
   const [everyCity, setEveryCity] = useState([]);
   const [selectedCities, setSelectedCities] = useState([]);
   const [gender, setGender] = useState('');
+  const [peopleName, setPeopleName] = useState('');
 
   useEffect(() => {
     callToApi().then((data) => {
       const filteredData = data.results.map((eachData) => {
+        //Es mejor limpiar los datos de la api en su propio archivo para dejar este componente más limpio
         return {
           gender: eachData.gender,
-          name: eachData.name,
+          name: `${eachData.name.title} ${eachData.name.first} ${eachData.name.last}`,
           city: eachData.location.city,
           age: eachData.dob.age,
           picture: eachData.picture.thumbnail,
@@ -47,6 +49,11 @@ function App() {
     }
   };
 
+  //Probar a juntar las funciones para cambiar el nombre y el género en una sola, los ifs de gender quizás pueda incluirlos en el filter 
+  const changePeopleName = (value) => {
+    setPeopleName(value)
+  }
+
   const selectGender = (value) => {
     if (value === 'female') {
       setGender('female');
@@ -72,9 +79,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header text="Linkedin"></Header>
+      <Header text="AdaLinkedin"></Header>
       <main className="main">
         <Form
+        peopleName={peopleName}
+        changePeopleName={changePeopleName}
           everyCity={everyCity}
           selectedCities={selectedCities}
           selectCity={selectCity}
@@ -85,7 +94,7 @@ function App() {
           <Route exact path="/">
             <PeopleList
               people={people}
-              everyCity={everyCity}
+              peopleName={peopleName}
               selectedCities={selectedCities}
               gender={gender}
             ></PeopleList>

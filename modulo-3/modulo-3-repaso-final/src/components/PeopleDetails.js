@@ -2,21 +2,21 @@ import '../styles/components/PeopleDetails.scss';
 
 import { Link } from 'react-router-dom';
 
-const PeopleDetails = (props) => {
+const PeopleDetails = ({people, peopledetail}) => {
 
-    const findPeople = props.people.find(eachPeople => eachPeople.id === props.peopledetail);
+    const findPeople = people.find(eachPeople => eachPeople.id === peopledetail);
 
   return (
     <article className="people__detail">
 
-      <h2>Más info de {`${findPeople.name.title} ${findPeople.name.first} ${findPeople.name.last}`}</h2>
+      <h2>Más info de {findPeople.name}</h2>
           <img
             className="people___img"
             src={findPeople.picture}
             alt={`Imagen de perfil de ${findPeople.name}`}
           />
           <div className="people__data">
-            <p className="people__data--name">{`${findPeople.name.title} ${findPeople.name.first} ${findPeople.name.last}`}</p>
+            <p className="people__data--name">{findPeople.name}</p>
             <p>{findPeople.city}</p>
             <p>{`${findPeople.age} años`}</p>
             <p>{findPeople.email}</p>

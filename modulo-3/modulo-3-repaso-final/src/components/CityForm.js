@@ -1,19 +1,19 @@
-const CityForm = (props) => {
+const CityForm = ({everyCity, selectedCities, selectCity}) => {
 
   const handleChangeCity = (ev) => {
-    props.selectCity(ev.currentTarget.checked, ev.currentTarget.id);
+    selectCity(ev.currentTarget.checked, ev.currentTarget.id);
   }
 
-  const htmlCity = props.everyCity.map((eachCity, index) => {
+  const htmlCity = everyCity.map((eachCity, index) => {
     return (
-      <div key={index} className="selecy__city">
-        <label htmlFor={eachCity}>
+      <div key={index} className="select__city">
+        <label htmlFor={eachCity} className="select__city--option">
           <input
             id={eachCity}
             type="checkbox"
             value={eachCity}
             name="cityOptions"
-            checked={props.selectedCities.includes(eachCity)}
+            checked={selectedCities.includes(eachCity)}
             onChange={handleChangeCity}
           />
           {eachCity}
@@ -24,7 +24,7 @@ const CityForm = (props) => {
 
   return (
     <>
-      <h3> Selecciona una ciudad</h3>
+      <h3 className="select__city--label"> Selecciona una ciudad</h3>
       {htmlCity}
     </>
   );

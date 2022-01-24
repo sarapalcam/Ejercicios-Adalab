@@ -1,10 +1,42 @@
 .form {
     display: flex;
     flex-direction: column;
+    margin: 0 50px 0 10%;
+    &__name{
+      border: rgb(31, 31, 182) solid 2px;
+      border-radius: 5px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+    &__gender{
+      border: rgb(31, 31, 182) solid 2px;
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 10px;
+
+    }
+    &__city{
+      border: rgb(31, 31, 182) solid 2px;
+      border-radius: 5px;
+      margin-top: 10px;
+      padding: 10px;
+    }
   }
 
   .select__city {
     display: flex;
     flex-direction: column;
+    margin: 0 10px;
+    width: 170px;
+    &--label{
+      font-size: 16px;
+      margin: 10px;
+      line-height: 16px;
+    }
+    &--option{
+      font-size: 16px;
+      margin-bottom: 5px ;
+    }
   }
   

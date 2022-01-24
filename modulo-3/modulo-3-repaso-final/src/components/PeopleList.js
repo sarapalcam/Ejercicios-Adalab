@@ -1,15 +1,13 @@
 import '../styles/components/PeopleList.scss';
 import PeopleListItem from './PeopleListItem';
 
-const PeopleList = (props) => {
+const PeopleList = ({people, peopleName, selectedCities, gender, peopledetail}) => {
 
   return (
       <ul className="list" >
-          <PeopleListItem people={props.people}  everyCity={props.everyCity} selectedCities={props.selectedCities} gender={props.gender} peopledetail={props.peopledetail}  />
+          <PeopleListItem people={people}  selectedCities={selectedCities} gender={gender} peopledetail={peopledetail}  peopleName={peopleName}/>
       </ul>
     );
 }
-
-
 
 export default PeopleList;
