@@ -10,7 +10,6 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 function App() {
   const [people, setPeople] = useState([]);
-  const [everyCity, setEveryCity] = useState([]);
   const [selectedCities, setSelectedCities] = useState([]);
   const [gender, setGender] = useState('');
   const [peopleName, setPeopleName] = useState('');
@@ -31,49 +30,55 @@ function App() {
         };
       });
       setPeople(filteredData);
-      const cityFromApi = data.results.map(
-        (eachData) => eachData.location.city
-      );
-      setEveryCity(cityFromApi);
     });
   }, []);
 
-  const selectCity = (checked, id) => {
-    const findCity = selectedCities.find((eachCity) => eachCity === id);
-    if (checked) {
-      setSelectedCities([...selectedCities, id]);
-    } else {
-      setSelectedCities(
-        selectedCities.filter((eachCity) => eachCity !== findCity)
-      );
+  const getCities = () => {
+    const cityFromApi = people.map((eachData) => eachData.city);
+    //Set nos crea un nuevo objeto de un array sin los datos repetidos
+    const uniqueCities = new Set(cityFromApi);
+    const uniqueCitiesArray = [...uniqueCities];
+    return uniqueCitiesArray.sort();
+  };
+
+  //Así lo hice yo (ya he borrado los de gender y name). Intentar unificar funciones siempre que pueda
+  // const selectCity = (checked, id) => {
+  //   const findCity = selectedCities.find((eachCity) => eachCity === id);
+  //   if (checked) {
+  //     setSelectedCities([...selectedCities, id]);
+  //   } else {
+  //     setSelectedCities(
+  //       selectedCities.filter((eachCity) => eachCity !== findCity)
+  //     );
+  //   }
+  // };
+
+  const handleFilter = (data) => {
+    if (data.key === 'name') {
+      setPeopleName(data.value);
+    } else if (data.key === 'gender') {
+      setGender(data.value);
+    } else if (data.key === 'city') {
+      if (selectedCities.includes(data.value)) {
+        const newCities = selectedCities.filter(eachCity => eachCity !== data.value);
+        setSelectedCities(newCities)
+      } else {
+       setSelectedCities([...selectedCities, data.value])
+      }
     }
   };
 
-  //Probar a juntar las funciones para cambiar el nombre y el género en una sola, los ifs de gender quizás pueda incluirlos en el filter 
-  const changePeopleName = (value) => {
-    setPeopleName(value)
-  }
-
-  const selectGender = (value) => {
-    if (value === 'female') {
-      setGender('female');
-    } else if (value === 'male') {
-      setGender('male');
-    } else {
-      setGender('');
-    }
-  };
-
+  //Dayana ha hecho esto dentro de una función, comparar con lo que he hecho yo
   const routeData = useRouteMatch('/people/:peopleId');
   const peopledetail = routeData !== null ? routeData.params.peopleId : '';
-  
+
   const getPeopleRoute = () => {
     if (peopledetail) {
-      return peopledetail
+      return peopledetail;
     } else {
-      return {}
+      return {};
     }
-  }
+  };
 
   getPeopleRoute();
 
@@ -82,13 +87,11 @@ function App() {
       <Header text="AdaLinkedin"></Header>
       <main className="main">
         <Form
-        peopleName={peopleName}
-        changePeopleName={changePeopleName}
-          everyCity={everyCity}
+          peopleName={peopleName}
+          cities={getCities()}
           selectedCities={selectedCities}
-          selectCity={selectCity}
-          selectGender={selectGender}
           gender={gender}
+          handleFilter={handleFilter}
         />
         <Switch>
           <Route exact path="/">

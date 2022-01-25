@@ -1,6 +1,9 @@
-const GenderForm = ({selectGender, gender}) => {
+const GenderForm = ({gender, handleFilter}) => {
   const handleChangeGender = (ev) => {
-    selectGender(ev.currentTarget.value);
+    handleFilter({
+      key: 'gender',
+      value: ev.currentTarget.value
+    });
   };
 
   return (

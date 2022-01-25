@@ -5,30 +5,29 @@ import NameForm from './NameForm';
 
 const Form = ({
   peopleName,
-  changePeopleName,
-  selectGender,
   gender,
-  everyCity,
+  cities,
   selectedCities,
-  selectCity,
+  handleFilter,
 }) => {
   return (
     <section className="form">
       <fieldset className="form__name">
         <NameForm
           peopleName={peopleName}
-          changePeopleName={changePeopleName}
           labelText="Filtrar por nombre:"
+          handleFilter={handleFilter}
         />
       </fieldset>
       <fieldset className="form__gender">
-        <GenderForm selectGender={selectGender} gender={gender} />
+        <GenderForm gender={gender} handleFilter={handleFilter} />
       </fieldset>
       <fieldset className="form__city">
         <CityForm
-          everyCity={everyCity}
+          cities={cities}
           selectedCities={selectedCities}
-          selectCity={selectCity}
+          handleFilter={handleFilter}
+
         />
       </fieldset>
     </section>

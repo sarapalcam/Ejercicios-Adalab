@@ -1,10 +1,12 @@
-const CityForm = ({everyCity, selectedCities, selectCity}) => {
-
+const CityForm = ({ cities, selectedCities, handleFilter }) => {
   const handleChangeCity = (ev) => {
-    selectCity(ev.currentTarget.checked, ev.currentTarget.id);
-  }
+    handleFilter({
+      key: 'city',
+      value: ev.target.value
+    });
+  };
 
-  const htmlCity = everyCity.map((eachCity, index) => {
+  const htmlCity = cities.map((eachCity, index) => {
     return (
       <div key={index} className="select__city">
         <label htmlFor={eachCity} className="select__city--option">
@@ -31,4 +33,3 @@ const CityForm = ({everyCity, selectedCities, selectCity}) => {
 };
 
 export default CityForm;
-

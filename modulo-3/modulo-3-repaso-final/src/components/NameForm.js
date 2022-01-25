@@ -1,6 +1,9 @@
-const NameForm = ({ peopleName, changePeopleName, labelText }) => {
+const NameForm = ({ peopleName, labelText, handleFilter }) => {
   const handleChangeInput = (ev) => {
-    changePeopleName(ev.currentTarget.value);
+    handleFilter({
+      key: 'name',
+      value: ev.currentTarget.value
+    });
   };
 
   return (

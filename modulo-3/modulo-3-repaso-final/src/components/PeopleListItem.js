@@ -20,20 +20,27 @@ const PeopleListItem = ({
         .toLocaleLowerCase()
         .includes(peopleName.toLocaleLowerCase());
     })
+    // Así lo hice yo
+    // .filter((eachPeople) =>
+    //   gender !== ''
+    //     ? eachPeople.gender === gender
+    //     : eachPeople.gender === 'female' || 'male'
+    // )
     .filter((eachPeople) =>
-      gender !== ''
-        ? eachPeople.gender === gender
-        : eachPeople.gender === 'female' || 'male'
+      gender === ''
+        ? true : eachPeople.gender === gender
     )
     .filter((eachPeople) => {
       //Esto lo hice primero igualandolo o no a [] y no funcionaba, ¿por qué?
       if (selectedCities.length !== 0) {
-        if (selectedCities.includes(eachPeople.city)) {
-          const foundCity = selectedCities.find(
-            (eachCity) => eachCity === eachPeople.city
-          );
-          return eachPeople.city === foundCity;
-        }
+        return selectedCities.includes(eachPeople.city)
+        //Así lo hice yo
+        // if (selectedCities.includes(eachPeople.city)) {
+        //   const foundCity = selectedCities.find(
+        //     (eachCity) => eachCity === eachPeople.city
+        //   );
+        //   return eachPeople.city === foundCity;
+        // }
       } else if (selectedCities.length === 0) {
         return eachPeople;
       }
