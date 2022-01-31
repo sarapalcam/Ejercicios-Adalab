@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const PeopleDetails = ({people, peopledetail}) => {
 
     const findPeople = people.find(eachPeople => eachPeople.id === peopledetail);
-
+//Si findPeople es undefined podemos retornar un html de usuario no encontrado. Para que al recargar la pagina de usuario siga apareciendo, hay que usar local storage: 1) guardar datos de la api, antes verificamos si hay algo en el local storage, y si hay es lo que tendremos en el array de people. Ver el vídeo
   return (
     <article className="people__detail">
 
