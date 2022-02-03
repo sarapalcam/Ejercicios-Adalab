@@ -1,0 +1,14 @@
+[
+    {
+      "id": "1",
+      "director": "Icíar Bollaín",
+      "age": 45,
+      "country": "Spain"
+    },
+    {
+      "id": "2",
+      "director": "Pilar Miró",
+      "age": 63,
+      "country": "Spain"
+    }
+  ]
