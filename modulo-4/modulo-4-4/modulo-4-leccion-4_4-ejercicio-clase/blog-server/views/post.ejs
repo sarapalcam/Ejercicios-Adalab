@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- No hace fala poner ruta de estáticos porque ya está buscando todo en esa carpeta el motor de plantillas -->
+    <link rel="stylesheet" href="../styles/main.css" />
+    <title>Adablog</title>
+  </head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Adablog Entrada</h1>
+      </header>
+    <main>
+        <h2><%= title %></h2>
+        <strong><%= brief %></strong>
+        <p><%= content %></p>
+<!-- DA UN ERROR MIRAR
+        <% if (typeof tags !== "undefined"){%> -->
+        <!-- <p><%=tags%></p> -->
+        <!-- <%}%> -->
+        <!-- <% catList.forEach(function(cat){ %>
+            <p><%= cat %></p>
+            <% } %> -->
+    </main>
+</body>
+</html>
