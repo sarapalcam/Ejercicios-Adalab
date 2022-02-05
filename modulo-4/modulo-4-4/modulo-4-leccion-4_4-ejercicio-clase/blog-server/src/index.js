@@ -24,4 +24,4 @@ server.get('/posts/:slug', (req, res) => {
     //console.log(postData);
     postData.catList = postData.categories.split(",");
     res.render("post", postData)
-})
+});

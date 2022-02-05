@@ -1,0 +1,16 @@
+{
+  "name": "modulo-4-leccion-5_3-ejercicio-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^7.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  }
+}
